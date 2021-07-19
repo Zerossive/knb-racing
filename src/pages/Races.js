@@ -13,14 +13,17 @@ export default function Races() {
         >
             <div className='race-container'>
                 {raceData.map((race) => {
-                    const { place, name, location, date } = race;
+                    const { place, name, location, date, image } = race;
                     return (
                         <section key={name} className='event-card'>
                             <div
                                 className='event-card-image'
+                                // style={{
+                                //     backgroundImage:
+                                //         "url(https://picsum.photos/1360/768)",
+                                // }}
                                 style={{
-                                    backgroundImage:
-                                        "url(https://picsum.photos/1360/768)",
+                                    backgroundImage: `url(${image})`,
                                 }}
                             >
                                 <h1>{place}</h1>

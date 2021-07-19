@@ -24,7 +24,7 @@ export const raceData = [
     {
         place: "1st",
         name: "race 1",
-        image: "(insert url here)",
+        image: `${process.env.PUBLIC_URL}/assets/images/first_win.jpg`,
         location: "Mesquite,TX USA",
         date: "May 8, 2021",
     },

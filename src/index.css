@@ -223,6 +223,10 @@ nav {
     padding: 1.75rem 3rem 1.75rem 3rem;
 }
 .menu-btn {
+    width: 20%;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
     display: none;
 }
 .flip {
@@ -253,10 +257,6 @@ nav {
     }
     .menu-btn {
         display: inline;
-        width: 20%;
-        text-align: center;
-        cursor: pointer;
-        transition: var(--transition);
     }
     .links-container {
         width: 100%;
@@ -357,22 +357,12 @@ nav {
     }
 }
 
-/* Races */
-/* .home-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-}
-.home-container .card {
-    padding: var(--padding-spacing);
-} */
-
 /* Grid */
 .grid-container {
     display: flex;
     flex-flow: row wrap;
-    /* margin: var(--margin-spacing); */
     margin-top: calc(var(--margin-spacing) * -1);
+    padding: var(--padding-spacing);
 }
 .grid-item {
     display: flex;
@@ -381,13 +371,15 @@ nav {
     margin: var(--margin-spacing) 0 var(--margin-spacing) 0;
 }
 .grid-image {
-    /* height: auto; */
     margin: calc(var(--padding-spacing) * -2);
     margin-right: var(--margin-spacing);
-    /* background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover; */
     object-fit: cover;
+}
+.grid-item h1,
+.grid-item h2,
+.grid-item h3,
+.grid-item h4 {
+    padding: var(--padding-spacing);
 }
 .w1 {
     width: calc(100% * 1 / 12);
@@ -439,6 +431,10 @@ nav {
 .w12 {
     padding: var(--padding-spacing);
 }
+iframe {
+    border: none;
+    border-radius: calc(var(--border-radius) * 7);
+}
 @media screen and (max-width: 800px) {
     .w1,
     .w2,
@@ -454,35 +450,29 @@ nav {
     .w12 {
         width: 100%;
     }
-    .grid-container {
-        /* flex-flow: column wrap; */
-        /* padding: 0px;
-        margin: 0px; */
-    }
     .grid-item {
-        /* flex-flow: column wrap; */
         padding: 0px;
-        /* margin: 0px; */
     }
     .grid-image {
-        /* margin: calc(var(--padding-spacing) * -2);
-        margin-bottom: var(--margin-spacing); */
         margin: 0px;
         padding: 0px;
-        /* background-repeat: no-repeat; */
-        /* background-position: top; */
-        /* background-size: cover; */
-        /* object-fit: cover; */
+    }
+    .grid-item h1,
+    .grid-item h2,
+    .grid-item h3,
+    .grid-item h4 {
+        line-height: 1em;
+    }
+    iframe {
+        height: 50vw;
     }
 }
 
 /* Cards */
 .card {
     background-color: var(--clr-white);
-    /* padding: var(--padding-spacing); */
     box-shadow: var(--light-shadow);
     transition: var(--transition);
-    /* margin: var(--margin-spacing); */
     border-radius: var(--border-radius);
     display: flex;
     overflow: hidden;

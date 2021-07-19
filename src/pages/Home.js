@@ -13,42 +13,15 @@ export default function Home() {
             }}
         >
             <div className='grid-container'>
-                {/* <div className='grid-item w12'>
-                    <div className='grid-item-content'>
-                        <img
-                            src='https://images.pexels.com/photos/315938/pexels-photo-315938.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'
-                            alt='image'
-                            className='grid-image w4'
-                        />
-                        <article className='w8'>
-                            <h1>Grid Item</h1>
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit. Soluta, quasi! Lorem ipsum
-                                dolor, sit amet consectetur adipisicing elit.
-                                Soluta, quasi! Lorem ipsum dolor, sit amet
-                                consectetur adipisicing elit. Soluta, quasi!
-                                Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit. Soluta, quasi! Lorem ipsum
-                                dolor, sit amet consectetur adipisicing elit.
-                                Soluta, quasi! Lorem ipsum dolor, sit amet
-                                consectetur adipisicing elit. Soluta, quasi!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit. Soluta, quasi!
-                            </p>
-                        </article>
-                    </div>
-                </div> */}
                 <div className='grid-item card w12'>
                     <img
-                        src='https://images.pexels.com/photos/315938/pexels-photo-315938.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'
+                        // src={first_win}
+                        src={`${process.env.PUBLIC_URL}/assets/images/first_win.jpg`}
                         alt='image'
                         className='grid-image w4'
                     />
                     <article className='w8'>
-                        <h1>Grid Item</h1>
+                        <h1>kaylee wins first race!</h1>
                         <p>
                             Lorem ipsum dolor, sit amet consectetur adipisicing
                             elit. Soluta, quasi! Lorem ipsum dolor, sit amet
@@ -82,62 +55,55 @@ export default function Home() {
                 </div>
                 <div className='grid-item w12'>
                     <img
-                        src='https://images.pexels.com/photos/315938/pexels-photo-315938.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260'
+                        src={`${process.env.PUBLIC_URL}/assets/images/car_trailer.jpg`}
                         alt='image'
                         className='grid-image w3'
                     />
-                    <div className='card w9'>
-                        <article className='w12'>
-                            <h1>Grid Item</h1>
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit. Soluta, quasi! Lorem ipsum
-                                dolor, sit amet consectetur adipisicing elit.
-                                Soluta, quasi! Lorem ipsum dolor, sit amet
-                                consectetur adipisicing elit. Soluta, quasi!
-                                Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit. Soluta, quasi! Lorem ipsum
-                                dolor, sit amet consectetur adipisicing elit.
-                                Soluta, quasi! Lorem ipsum dolor, sit amet
-                                consectetur adipisicing elit. Soluta, quasi!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit. Soluta, quasi!
-                            </p>
-                            <div className='grid-item w12'>
-                                <p className='w6'>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Sequi eum non labore velit
-                                    voluptatum veniam. Suscipit laborum officia
-                                    totam commodi?
+                    <div className='card w6'>
+                        <div className='w12'>
+                            <article className='w12'>
+                                <h1>Title</h1>
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur
+                                    adipisicing elit. Soluta, quasi! Lorem ipsum
+                                    dolor, sit amet consectetur adipisicing
+                                    elit. Soluta, quasi! Lorem ipsum dolor, sit
+                                    amet consectetur adipisicing elit. Soluta,
+                                    quasi! Lorem ipsum dolor, sit amet
+                                    consectetur adipisicing elit. Soluta, quasi!
+                                    Lorem ipsum dolor, sit amet consectetur
+                                    adipisicing elit. Soluta, quasi! Lorem ipsum
+                                    dolor, sit amet consectetur adipisicing
+                                    elit. Soluta, quasi!
                                 </p>
-                                <p className='w6'>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Sequi eum non labore velit
-                                    voluptatum veniam. Suscipit laborum officia
-                                    totam commodi?
+                                <p>
+                                    Lorem ipsum dolor, sit amet consectetur
+                                    adipisicing elit. Soluta, quasi!
                                 </p>
-                            </div>
-                        </article>
+                                <div className='grid-item w12'>
+                                    <p className='w6'>
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Sequi eum non labore
+                                        velit voluptatum veniam. Suscipit
+                                        laborum officia totam commodi?
+                                    </p>
+                                    <p className='w6'>
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Sequi eum non labore
+                                        velit voluptatum veniam. Suscipit
+                                        laborum officia totam commodi?
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
                     </div>
+                    <iframe
+                        // width='400px'
+                        // height='300px'
+                        className='w3'
+                        src='https://www.youtube.com/embed/I0KIFlzVAHk'
+                    ></iframe>
                 </div>
-                {/* <section className='card'>
-                    <h1>asdf</h1>
-                    <iframe
-                        width='auto'
-                        height='auto'
-                        src='https://www.youtube.com/embed/I0KIFlzVAHk'
-                    ></iframe>
-                </section>
-                <GridItem width={10}>
-                    <h1>asdf</h1>
-                    <iframe
-                        width='auto'
-                        height='auto'
-                        src='https://www.youtube.com/embed/I0KIFlzVAHk'
-                    ></iframe>
-                </GridItem> */}
             </div>
         </main>
     );

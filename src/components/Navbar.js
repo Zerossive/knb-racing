@@ -31,7 +31,11 @@ const Navbar = () => {
                     {links.map((link) => {
                         const { name, url } = link;
                         return (
-                            <Link key={name} to={`${url}`}>
+                            <Link
+                                key={name}
+                                to={`${url}`}
+                                onClick={() => setIsMenuShown(false)}
+                            >
                                 <li>{name}</li>
                             </Link>
                         );
