@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { links } from "../data";
 import { FaCar, FaAngleDown } from "react-icons/fa";
 

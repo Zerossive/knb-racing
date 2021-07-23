@@ -12,7 +12,9 @@ const Error = () => {
                     textAlign: "center",
                 }}
             >
-                <h1 style={{ color: "red" }}>this page does not exist</h1>
+                <h1>
+                    <span>this page does not exist</span>
+                </h1>
                 <Link to='/'>
                     <div>
                         <button className='btn'>go home</button>

@@ -141,6 +141,9 @@ h4 {
 .hidden {
     display: none;
 }
+a {
+    color: var(--clr-text-primary);
+}
 
 /* Main */
 .bg {
@@ -157,6 +160,11 @@ h4 {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+}
+.social-icon {
+    width: 50px;
+    height: auto;
+    color: var(--clr-primary-7);
 }
 
 /* Navbar */
@@ -375,11 +383,31 @@ nav {
     margin-right: var(--margin-spacing);
     object-fit: cover;
 }
+.bg-image {
+    background-size: cover;
+}
+.bg-image span {
+    -webkit-text-stroke: 1px var(--clr-text-light);
+    font-size: 5rem;
+}
 .grid-item h1,
 .grid-item h2,
 .grid-item h3,
 .grid-item h4 {
-    padding: var(--padding-spacing);
+    padding: var(--padding-spacing) 0 calc(var(--spacing) * 3) 0;
+}
+.grid-item h1 {
+    color: var(--clr-text-light);
+}
+.card h1 {
+    color: var(--clr-text-dark);
+}
+.underline {
+    border-bottom: 5px solid var(--clr-text-light);
+    border-color: var(--clr-text-light);
+}
+.card .underline {
+    border-color: var(--clr-text-dark);
 }
 .w1 {
     width: calc(100% * 1 / 12);
@@ -431,9 +459,29 @@ nav {
 .w12 {
     padding: var(--padding-spacing);
 }
+.title {
+    text-align: center;
+}
+.center {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+.center-vertical {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    justify-content: center;
+}
 iframe {
     border: none;
     border-radius: calc(var(--border-radius) * 7);
+}
+span {
+    color: var(--clr-text-primary);
+}
+.card-list-item {
+    min-width: 800px;
 }
 @media screen and (max-width: 800px) {
     .w1,
@@ -457,11 +505,19 @@ iframe {
         margin: 0px;
         padding: 0px;
     }
+    .bg-image {
+        margin: calc(var(--padding-spacing) * -2);
+        margin-bottom: 0;
+        width: 200%;
+    }
     .grid-item h1,
     .grid-item h2,
     .grid-item h3,
     .grid-item h4 {
         line-height: 1em;
+    }
+    .card-list-item {
+        min-width: 0px;
     }
     iframe {
         height: 50vw;
@@ -475,6 +531,7 @@ iframe {
     transition: var(--transition);
     border-radius: var(--border-radius);
     display: flex;
+    flex-wrap: wrap;
     overflow: hidden;
     line-height: 2em;
 }

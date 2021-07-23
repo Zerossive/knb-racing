@@ -1,5 +1,4 @@
 import React from "react";
-import GridItem from "../components/GridItem";
 import { bgImages } from "../data";
 
 export default function Home() {
@@ -21,7 +20,7 @@ export default function Home() {
                         className='grid-image w4'
                     />
                     <article className='w8'>
-                        <h1>kaylee wins first race!</h1>
+                        <h1>kaylee boyce</h1>
                         <p>
                             Lorem ipsum dolor, sit amet consectetur adipisicing
                             elit. Soluta, quasi! Lorem ipsum dolor, sit amet
