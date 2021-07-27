@@ -127,15 +127,19 @@ h4 {
     text-transform: capitalize;
     font-size: 1rem;
     letter-spacing: var(--spacing);
-    margin-top: 2rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-top: var(--margin-spacing);
     cursor: pointer;
     transition: var(--transition);
+}
+.btn a {
+    color: var(--clr-text-light);
 }
 .btn:hover {
     background: var(--clr-white);
     border-color: var(--clr-primary-7);
+    color: var(--clr-primary-7);
+}
+.btn:hover a {
     color: var(--clr-primary-7);
 }
 .hidden {
@@ -369,12 +373,14 @@ nav {
 .grid-container {
     display: flex;
     flex-flow: row wrap;
+    align-items: flex-start;
     margin-top: calc(var(--margin-spacing) * -1);
     padding: var(--padding-spacing);
 }
 .grid-item {
     display: flex;
     flex-flow: row wrap;
+    /* align-items: flex-start; */
     line-height: 2em;
     margin: var(--margin-spacing) 0 var(--margin-spacing) 0;
 }
@@ -383,11 +389,25 @@ nav {
     margin-right: var(--margin-spacing);
     object-fit: cover;
 }
+.sponsor-image {
+    object-fit: contain;
+}
 .bg-image {
     background-size: cover;
+    /* background-position: center; */
+}
+.bg-image-right {
+    margin: calc(var(--padding-spacing) * -2);
+    margin-left: calc(var(--margin-spacing) * 2);
+    background-size: cover;
+    /* margin: -200px -200px -200px -200px;
+    padding: -200px -200px -200px -200px;
+    width: 200%;
+    height: 200%; */
 }
 .bg-image span {
     -webkit-text-stroke: 1px var(--clr-text-light);
+    padding: calc(var(--padding-spacing) * 2);
     font-size: 5rem;
 }
 .grid-item h1,
@@ -481,7 +501,7 @@ span {
     color: var(--clr-text-primary);
 }
 .card-list-item {
-    min-width: 800px;
+    min-width: 900px;
 }
 @media screen and (max-width: 800px) {
     .w1,
@@ -509,6 +529,11 @@ span {
         margin: calc(var(--padding-spacing) * -2);
         margin-bottom: 0;
         width: 200%;
+    }
+    .bg-image-right {
+        margin-top: calc(var(--margin-spacing) * 0.5) !important;
+        margin-bottom: calc(var(--margin-spacing) * -1) !important;
+        background-position: center;
     }
     .grid-item h1,
     .grid-item h2,

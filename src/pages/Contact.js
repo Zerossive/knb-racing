@@ -1,6 +1,12 @@
 import React from "react";
 import { bgImages } from "../data";
-import { FaTwitter, FaFacebook, FaYoutube } from "react-icons/fa";
+import {
+    FaTwitter,
+    FaFacebook,
+    FaYoutube,
+    FaInstagram,
+    FaRegEnvelope,
+} from "react-icons/fa";
 
 export default function Contact() {
     const { url } = bgImages[Math.floor(Math.random() * bgImages.length)];
@@ -20,6 +26,40 @@ export default function Contact() {
             </div>
 
             <div className='grid-container'>
+                {/* Email */}
+                <div className='grid-item w4' style={{ minWidth: "300px" }}>
+                    <div className='card w12'>
+                        <article className='w9'>
+                            <h3>Email</h3>
+                            <p>
+                                Contact us through email at{" "}
+                                <a
+                                    href='#'
+                                    onClick={() => {
+                                        navigator.clipboard.writeText(
+                                            "knbracer@gmail.com"
+                                        );
+                                    }}
+                                >
+                                    knbracer@gmail.com
+                                </a>
+                                . Click text or icon to copy email to clipboard.
+                            </p>
+                        </article>
+                        <a
+                            className='w3 center-vertical '
+                            href='#'
+                            onClick={() => {
+                                navigator.clipboard.writeText(
+                                    "knbracer@gmail.com"
+                                );
+                            }}
+                        >
+                            <FaRegEnvelope className='social-icon' />
+                        </a>
+                    </div>
+                </div>
+
                 {/* Facebook */}
                 <div className='grid-item w4' style={{ minWidth: "300px" }}>
                     <div className='card w12'>
@@ -73,18 +113,41 @@ export default function Contact() {
                             <h3>YouTube</h3>
                             <p>
                                 Visit us on YouTube at
-                                <a href='https://www.youtube.com/user/deanboyce1304'>
+                                <a href='https://www.youtube.com/channel/UCIXZTX6nqppy094SViYq96A'>
                                     {" "}
                                     Kaylee Boyce
+                                </a>
+                                , where we post clips of Kaylee driving.
+                            </p>
+                        </article>
+                        <a
+                            className='w3 center-vertical'
+                            href='https://www.youtube.com/channel/UCIXZTX6nqppy094SViYq96A'
+                        >
+                            <FaYoutube className='social-icon' />
+                        </a>
+                    </div>
+                </div>
+
+                {/* Instagram */}
+                <div className='grid-item w4' style={{ minWidth: "300px" }}>
+                    <div className='card w12'>
+                        <article className='w9'>
+                            <h3>Instagram</h3>
+                            <p>
+                                Visit us on Instagram at
+                                <a href='https://www.instagram.com'>
+                                    {" "}
+                                    KNB Racing
                                 </a>
                                 , where we post...
                             </p>
                         </article>
                         <a
                             className='w3 center-vertical'
-                            href='https://www.youtube.com/user/deanboyce1304'
+                            href='https://www.instagram.com'
                         >
-                            <FaYoutube className='social-icon' />
+                            <FaInstagram className='social-icon' />
                         </a>
                     </div>
                 </div>

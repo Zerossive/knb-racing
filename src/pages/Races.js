@@ -50,25 +50,29 @@ export default function Races() {
 
                 {/* Races */}
                 {raceData.map((race) => {
-                    const { place, name, location, date, image } = race;
+                    const { place, name, location, date, image1, image2 } =
+                        race;
                     return (
-                        <div className='grid-item w6 card-list-item' key={date}>
+                        <div
+                            className='grid-item w12 card-list-item'
+                            key={date}
+                        >
                             <div className='card w12'>
                                 <div
-                                    className='grid-image bg-image w4 center-vertical'
+                                    className='grid-image bg-image w3 '
                                     style={{
-                                        backgroundImage: `url(${image})`,
+                                        backgroundImage: `url(${image1})`,
                                     }}
                                 >
                                     <div className='w12'></div>
                                     <div className='w12'></div>
-                                    <h1 className='title'>
+                                    <h1 className=''>
                                         <span>{place}</span>
                                     </h1>
                                     <div className='w12'></div>
                                     <div className='w12'></div>
                                 </div>
-                                <article className='w8 grid-item'>
+                                <article className='w6 grid-item'>
                                     <h2 className='title w4 center-vertical'>
                                         <span>{name}</span>
                                     </h2>
@@ -79,6 +83,24 @@ export default function Races() {
                                         {date}
                                     </h3>
                                 </article>
+                                {/* <img
+                                    className='grid-image-right w3 center-vertical'
+                                    src={image2}
+                                ></img> */}
+                                <div
+                                    className='grid-image bg-image-right bg-image w3 center-vertical'
+                                    style={{
+                                        backgroundImage: `url(${image2})`,
+                                    }}
+                                >
+                                    <div className='w12'></div>
+                                    <div className='w12'></div>
+                                    <h1 className='title'>
+                                        <span></span>
+                                    </h1>
+                                    <div className='w12'></div>
+                                    <div className='w12'></div>
+                                </div>
                             </div>
                         </div>
                     );

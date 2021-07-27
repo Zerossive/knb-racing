@@ -1,4 +1,4 @@
-import React from "react";
+import { React } from "react";
 import { sponsorData, bgImages } from "../data";
 
 const Sponsors = () => {
@@ -28,25 +28,16 @@ const Sponsors = () => {
                             <img
                                 src={image}
                                 alt={name}
-                                className='grid-image w4'
+                                className='grid-image sponsor-image w4'
                             />
                             <article className='w8'>
                                 <h1>{name}</h1>
                                 <p>{desc}</p>
-                                <div className='grid-item w12'>
-                                    <p className='w6'>
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Sequi eum non labore
-                                        velit voluptatum veniam. Suscipit
-                                        laborum officia totam commodi?
-                                    </p>
-                                    <p className='w6'>
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Sequi eum non labore
-                                        velit voluptatum veniam. Suscipit
-                                        laborum officia totam commodi?
-                                    </p>
-                                </div>
+                                <button className='btn w12'>
+                                    <a href='https://jmrbodyworks.com/'>
+                                        Visit JM&R
+                                    </a>
+                                </button>
                             </article>
                         </div>
                     );
