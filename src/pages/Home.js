@@ -40,7 +40,7 @@ export default function Home() {
                     </article>
                 </div>
                 <div className='w12 center-vertical'>
-                    <div className='grid-item  w4'>
+                    <div className='grid-item  w4 center-vertical'>
                         <h1 className='w12 title'>
                             first time behind the wheel
                         </h1>
@@ -50,13 +50,14 @@ export default function Home() {
                             style={{
                                 border: "none",
                                 overflow: "hidden",
-                                minHeight: "800px",
+                                aspectRatio: "9/16",
+                                // minHeight: "700px",
                             }}
                             className='w12'
                             src='https://www.youtube.com/embed/I0KIFlzVAHk'
                         ></iframe>
                     </div>
-                    <div className='grid-item  w4'>
+                    <div className='grid-item  w4 center-vertical'>
                         <h1 className='w12 title'>first race</h1>
                         <iframe
                             src='https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fdeanboyce1304%2Fvideos%2F1037324196676505%2F&width=500&show_text=false&height=888&appId'
@@ -65,7 +66,8 @@ export default function Home() {
                             style={{
                                 // border: "none",
                                 // overflow: "hidden",
-                                minHeight: "800px",
+                                aspectRatio: "9/16",
+                                // minHeight: "800px",
                             }}
                             className='w12'
                             // scrolling='no'
