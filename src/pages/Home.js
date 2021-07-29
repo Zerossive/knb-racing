@@ -22,20 +22,20 @@ export default function Home() {
                     <article className='w8'>
                         <h1>kaylee boyce</h1>
                         <p>
-                            I was born on November 28, 2006 in Mesquite TX. When
-                            I was 5 I started cheer stayed in it for 5yrs not
-                            constit cause of a broken arm then a couple years
-                            later broke my foot then a few months after that I
-                            broke my thumb.Then we moved to a new location still
-                            in Mesquite but closer to The Devils Bowl dirt track
-                            I could here the cars racing while swimming in the
-                            pool at night.So I asked my Mom if I could go to a
-                            race and watch , she said yes I was thirteen When my
-                            dad finally took me to the Outlaw Race of 2020 and
-                            from there I was hooked on dirt track racing. That
-                            summer mom and dad bought me a tuner car. It was the
-                            best, dad and I started working on it to get it
-                            ready for the 2021 season
+                            I was born on November 28, 2006 in Mesquite TX. I
+                            started cheer when i was 5 and stayed in it for 5
+                            years, when I wasn't recovering from a broken arm
+                            that is. A couple years later I broke my foot, then
+                            a few months after that I broke my thumb. Then we
+                            moved closer to The Devils Bowl dirt track and I
+                            could hear the cars racing while swimming in the
+                            pool at night. So I asked my Mom if I could go to a
+                            race and watch. She said yes, so at thirteen my dad
+                            finally took me to the Outlaw Race of 2020 and from
+                            there I was hooked on dirt track racing. That summer
+                            mom and dad bought me a tuner car. It was the best,
+                            dad and I started working on it to get it ready for
+                            the 2021 season and here I am today.
                         </p>
                     </article>
                 </div>

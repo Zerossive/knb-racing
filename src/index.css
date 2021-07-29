@@ -40,7 +40,6 @@
     /* Misc */
     --transition: all 0.2s linear;
     --navbar-height: 60px;
-    --nav-height: 5rem;
     --spacing: 0.25rem;
     --border-radius: 3px;
     --shadow-radius: 15px;
@@ -214,6 +213,12 @@ nav {
     width: auto;
     padding: 0.5rem;
 }
+.logo {
+    height: 100%;
+    padding: calc(var(--padding-spacing) / 4);
+    object-fit: contain;
+    transform: skew(20deg);
+}
 .links-container {
     transition: var(--transition);
     width: 50%;
@@ -299,30 +304,6 @@ nav {
         padding: 0em;
     }
 }
-
-/* Navbar v2 */
-/* .navbar {
-    background: grey;
-    padding: 0px !important;
-    margin: 0px !important;
-    height: var(--nav-height);
-    overflow: hidden;
-}
-.nav-header {
-    height: var(--nav-height);
-}
-.logo-title {
-    line-height: var(--nav-height);
-}
-.page-title {
-    line-height: var(--nav-height);
-}
-
-@media screen and (max-width: 800px) {
-    .navbar {
-        height: auto;
-    }
-} */
 
 /* Event Cards */
 .event-card {

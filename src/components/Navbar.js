@@ -9,7 +9,12 @@ const Navbar = () => {
         <nav>
             <div className='nav-header'>
                 <div className='logo-container'>
-                    <FaCar className='react-icon' />
+                    <img
+                        src='https://i.imgur.com/ivXJXKR.png'
+                        alt='logo'
+                        className='logo'
+                    />
+                    {/* <FaCar className='react-icon' /> */}
                 </div>
                 <Link to='/' className='title'>
                     <h1>KNB Racing</h1>
