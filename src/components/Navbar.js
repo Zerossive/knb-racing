@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { links } from "../data";
-import { FaCar, FaAngleDown } from "react-icons/fa";
+import { FaAngleDown } from "react-icons/fa";
 
 const Navbar = () => {
     const [isMenuShown, setIsMenuShown] = useState(false);

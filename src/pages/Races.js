@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { client } from "../client";
 import { raceData, bgImages } from "../data";
 
 export default function Races() {
     const { url } = bgImages[Math.floor(Math.random() * bgImages.length)];
+
+    const [races, setRaces] = useState([]);
+
+    useEffect(() => {
+        client
+            .getEntries({
+                content_type: "races",
+            })
+            .then((response) => {
+                const sortedItems = response.items.sort((a, b) => {
+                    return a.fields.index - b.fields.index;
+                });
+                setRaces(sortedItems);
+            })
+            .catch(console.error);
+    }, []);
 
     return (
         <main
@@ -49,7 +66,7 @@ export default function Races() {
                 </div>
 
                 {/* Races */}
-                {raceData.map((race) => {
+                {/* {raceData.map((race) => {
                     const { place, name, location, date, image1, image2 } =
                         race;
                     return (
@@ -83,14 +100,70 @@ export default function Races() {
                                         {date}
                                     </h3>
                                 </article>
-                                {/* <img
-                                    className='grid-image-right w3 center-vertical'
-                                    src={image2}
-                                ></img> */}
                                 <div
                                     className='grid-image bg-image-right bg-image w3 center-vertical'
                                     style={{
                                         backgroundImage: `url(${image2})`,
+                                    }}
+                                >
+                                    <div className='w12'></div>
+                                    <div className='w12'></div>
+                                    <h1 className='title'>
+                                        <span></span>
+                                    </h1>
+                                    <div className='w12'></div>
+                                    <div className='w12'></div>
+                                </div>
+                            </div>
+                        </div>
+                    );
+                })} */}
+
+                {/* Races (CMS) */}
+                {races.map((race) => {
+                    const {
+                        placement,
+                        image1,
+                        trackName,
+                        location,
+                        date,
+                        image2,
+                    } = race.fields;
+                    return (
+                        <div
+                            className='grid-item w12 card-list-item'
+                            key={date}
+                        >
+                            <div className='card w12'>
+                                <div
+                                    className='grid-image bg-image w3 '
+                                    style={{
+                                        backgroundImage: `url(${image1.fields.file.url})`,
+                                    }}
+                                >
+                                    <div className='w12'></div>
+                                    <div className='w12'></div>
+                                    <h1 className=''>
+                                        <span>#{placement}</span>
+                                    </h1>
+                                    <div className='w12'></div>
+                                    <div className='w12'></div>
+                                </div>
+                                <article className='w6 grid-item'>
+                                    <h2 className='title w4 center-vertical'>
+                                        <span>{trackName}</span>
+                                    </h2>
+                                    <h3 className='title w4 center-vertical'>
+                                        {location}
+                                    </h3>
+                                    <h3 className='title w4 center-vertical'>
+                                        {date}
+                                    </h3>
+                                </article>
+                                <div
+                                    className='grid-image bg-image-right bg-image w3 center-vertical'
+                                    style={{
+                                        backgroundImage: `url(${image2.fields.file.url})`,
                                     }}
                                 >
                                     <div className='w12'></div>

@@ -16,7 +16,7 @@ export default function Home() {
                     <img
                         src={raceData[0].image1}
                         // src={`${process.env.PUBLIC_URL}/assets/images/first_win.jpg`}
-                        alt='image'
+                        alt={raceData[0].name}
                         className='grid-image w4'
                     />
                     <article className='w8'>
@@ -47,6 +47,7 @@ export default function Home() {
                         <iframe
                             // width='400px'
                             // height='800px'
+                            title='youtube video'
                             style={{
                                 border: "none",
                                 overflow: "hidden",
@@ -63,6 +64,7 @@ export default function Home() {
                             src='https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fdeanboyce1304%2Fvideos%2F1037324196676505%2F&width=500&show_text=false&height=888&appId'
                             // width='500'
                             // height='888'
+                            title='facebook video'
                             style={{
                                 // border: "none",
                                 // overflow: "hidden",
