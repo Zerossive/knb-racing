@@ -28,9 +28,10 @@ const Sponsors = () => {
                             <img
                                 src={image}
                                 alt={name}
-                                className='grid-image sponsor-image w4'
+                                className='w4'
+                                style={{ objectFit: "contain" }}
                             />
-                            <article className='w8'>
+                            <article className='w8 pad'>
                                 <h1>{name}</h1>
                                 <p>{desc}</p>
                                 <button className='btn w12'>

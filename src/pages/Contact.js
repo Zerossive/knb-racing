@@ -18,17 +18,17 @@ export default function Contact() {
                 backgroundImage: `url(${url})`,
             }}
         >
-            {/* Title */}
-            <div className='grid-item w12'>
-                <div className='w4'></div>
-                <h1 className='w4 title underline'>Contact Us</h1>
-                <div className='w4'></div>
-            </div>
+            <div className='grid-container center-vertical'>
+                {/* Title */}
+                <div className='grid-item w12'>
+                    <div className='w4'></div>
+                    <h1 className='w4 title underline'>Contact Us</h1>
+                    <div className='w4'></div>
+                </div>
 
-            <div className='grid-container'>
                 {/* Email */}
-                <div className='grid-item w4' style={{ minWidth: "300px" }}>
-                    <div className='card w12'>
+                <div className='grid-item w4 pad' style={{ minWidth: "300px" }}>
+                    <div className='card w12 pad'>
                         <article className='w9'>
                             <h3>Email</h3>
                             <p>
@@ -61,8 +61,8 @@ export default function Contact() {
                 </div>
 
                 {/* Facebook */}
-                <div className='grid-item w4' style={{ minWidth: "300px" }}>
-                    <div className='card w12'>
+                <div className='grid-item w4 pad' style={{ minWidth: "300px" }}>
+                    <div className='card w12 pad'>
                         <article className='w9'>
                             <h3>Facebook</h3>
                             <p>
@@ -84,8 +84,8 @@ export default function Contact() {
                 </div>
 
                 {/* Twitter */}
-                <div className='grid-item w4' style={{ minWidth: "300px" }}>
-                    <div className='card w12'>
+                <div className='grid-item w4 pad' style={{ minWidth: "300px" }}>
+                    <div className='card w12 pad'>
                         <article className='w9'>
                             <h3>Twitter</h3>
                             <p>
@@ -107,8 +107,8 @@ export default function Contact() {
                 </div>
 
                 {/* YouTube */}
-                <div className='grid-item w4' style={{ minWidth: "300px" }}>
-                    <div className='card w12'>
+                <div className='grid-item w4 pad' style={{ minWidth: "300px" }}>
+                    <div className='card w12 pad'>
                         <article className='w9'>
                             <h3>YouTube</h3>
                             <p>
@@ -130,8 +130,8 @@ export default function Contact() {
                 </div>
 
                 {/* Instagram */}
-                <div className='grid-item w4' style={{ minWidth: "300px" }}>
-                    <div className='card w12'>
+                <div className='grid-item w4 pad' style={{ minWidth: "300px" }}>
+                    <div className='card w12 pad'>
                         <article className='w9'>
                             <h3>Instagram</h3>
                             <p>

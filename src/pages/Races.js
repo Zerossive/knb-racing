@@ -130,49 +130,70 @@ export default function Races() {
                         image2,
                     } = race.fields;
                     return (
-                        <div
-                            className='grid-item w12 card-list-item'
-                            key={date}
-                        >
+                        <div className='grid-item w12' key={date}>
                             <div className='card w12'>
+                                {/* Left Image */}
                                 <div
-                                    className='grid-image bg-image w3 '
+                                    className='w3 pad'
                                     style={{
                                         backgroundImage: `url(${image1.fields.file.url})`,
+                                        backgroundSize: "cover",
+                                        backgroundPosition: "center",
                                     }}
                                 >
-                                    <div className='w12'></div>
-                                    <div className='w12'></div>
-                                    <h1 className=''>
-                                        <span>#{placement}</span>
-                                    </h1>
-                                    <div className='w12'></div>
-                                    <div className='w12'></div>
+                                    <div className='w12 pad'></div>
+                                    <div className='w12 pad'></div>
+                                    {/* <h1>
+                                        <span
+                                            style={{
+                                                WebkitTextStroke: "1px white",
+                                                fontSize: "5rem",
+                                            }}
+                                            className='pad-2'
+                                        >
+                                            #{placement}
+                                        </span>
+                                    </h1> */}
+                                    <div className='w12 pad'></div>
+                                    <div className='w12 pad'></div>
                                 </div>
-                                <article className='w6 grid-item'>
-                                    <h2 className='title w4 center-vertical'>
-                                        <span>{trackName}</span>
-                                    </h2>
-                                    <h3 className='title w4 center-vertical'>
-                                        {location}
-                                    </h3>
-                                    <h3 className='title w4 center-vertical'>
-                                        {date}
-                                    </h3>
-                                </article>
+                                {/* Body */}
+                                <div className='w6 grid-item'>
+                                    {/* Placement */}
+                                    <h1 className='w6 m4 pad center-vertical'>
+                                        <span
+                                            style={{
+                                                // WebkitTextStroke: "2px black",
+                                                fontSize: "5rem",
+                                            }}
+                                        >
+                                            #{placement}
+                                        </span>
+                                    </h1>
+                                    {/* Race Info */}
+                                    <article className='w6 m8'>
+                                        <h2 className='w12'>
+                                            <span>{trackName}</span>
+                                        </h2>
+                                        <h3 className='w12'>{location}</h3>
+                                        <h3 className='w12'>{date}</h3>
+                                    </article>
+                                </div>
+                                {/* Right Image */}
                                 <div
-                                    className='grid-image bg-image-right bg-image w3 center-vertical'
+                                    className='w3 pad'
                                     style={{
                                         backgroundImage: `url(${image2.fields.file.url})`,
+                                        backgroundSize: "cover",
+                                        backgroundPosition: "center",
                                     }}
                                 >
-                                    <div className='w12'></div>
-                                    <div className='w12'></div>
-                                    <h1 className='title'>
-                                        <span></span>
-                                    </h1>
-                                    <div className='w12'></div>
-                                    <div className='w12'></div>
+                                    <div className='w12 pad'></div>
+                                    <div className='w12 pad'></div>
+                                    <div className='w12 pad'></div>
+                                    <div className='w12 pad'></div>
+                                    <div className='w12 pad'></div>
+                                    <div className='w12 pad'></div>
                                 </div>
                             </div>
                         </div>
