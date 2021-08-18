@@ -362,6 +362,14 @@ nav {
 .card .underline {
     border-color: var(--clr-text-dark);
 }
+.grid-img {
+    object-fit: cover;
+    object-position: center;
+}
+.bg-img {
+    background-size: cover;
+    background-position: center;
+}
 .w1 {
     width: calc(100% * 1 / 12);
 }

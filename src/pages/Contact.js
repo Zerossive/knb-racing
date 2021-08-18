@@ -18,7 +18,7 @@ export default function Contact() {
                 backgroundImage: `url(${url})`,
             }}
         >
-            <div className='grid-container center-vertical'>
+            <div className='grid-container'>
                 {/* Title */}
                 <div className='grid-item w12'>
                     <div className='w4'></div>
@@ -27,9 +27,9 @@ export default function Contact() {
                 </div>
 
                 {/* Email */}
-                <div className='grid-item w4 pad' style={{ minWidth: "300px" }}>
+                <div className='w4 pad' style={{ minWidth: "300px" }}>
                     <div className='card w12 pad'>
-                        <article className='w9'>
+                        <article className='w9 m9'>
                             <h3>Email</h3>
                             <p>
                                 Contact us through email at{" "}
@@ -47,7 +47,7 @@ export default function Contact() {
                             </p>
                         </article>
                         <a
-                            className='w3 center-vertical '
+                            className='w3 m3 center-vertical '
                             href='#'
                             onClick={() => {
                                 navigator.clipboard.writeText(
@@ -61,9 +61,9 @@ export default function Contact() {
                 </div>
 
                 {/* Facebook */}
-                <div className='grid-item w4 pad' style={{ minWidth: "300px" }}>
+                <div className='w4 pad' style={{ minWidth: "300px" }}>
                     <div className='card w12 pad'>
-                        <article className='w9'>
+                        <article className='w9 m9'>
                             <h3>Facebook</h3>
                             <p>
                                 Visit us on Facebook at
@@ -75,7 +75,7 @@ export default function Contact() {
                             </p>
                         </article>
                         <a
-                            className='w3 center-vertical'
+                            className='w3 m3 center-vertical'
                             href='https://www.facebook.com/deanboyce1304'
                         >
                             <FaFacebook className='social-icon' />
@@ -84,9 +84,9 @@ export default function Contact() {
                 </div>
 
                 {/* Twitter */}
-                <div className='grid-item w4 pad' style={{ minWidth: "300px" }}>
+                <div className='w4 pad' style={{ minWidth: "300px" }}>
                     <div className='card w12 pad'>
-                        <article className='w9'>
+                        <article className='w9 m9'>
                             <h3>Twitter</h3>
                             <p>
                                 Visit us on Twitter at
@@ -98,7 +98,7 @@ export default function Contact() {
                             </p>
                         </article>
                         <a
-                            className='w3 center-vertical'
+                            className='w3 m3 center-vertical'
                             href='http://www.twitter.com'
                         >
                             <FaTwitter className='social-icon' />
@@ -107,9 +107,9 @@ export default function Contact() {
                 </div>
 
                 {/* YouTube */}
-                <div className='grid-item w4 pad' style={{ minWidth: "300px" }}>
+                <div className='w4 pad' style={{ minWidth: "300px" }}>
                     <div className='card w12 pad'>
-                        <article className='w9'>
+                        <article className='w9 m9'>
                             <h3>YouTube</h3>
                             <p>
                                 Visit us on YouTube at
@@ -121,7 +121,7 @@ export default function Contact() {
                             </p>
                         </article>
                         <a
-                            className='w3 center-vertical'
+                            className='w3 m3 center-vertical'
                             href='https://www.youtube.com/channel/UCIXZTX6nqppy094SViYq96A'
                         >
                             <FaYoutube className='social-icon' />
@@ -130,9 +130,9 @@ export default function Contact() {
                 </div>
 
                 {/* Instagram */}
-                <div className='grid-item w4 pad' style={{ minWidth: "300px" }}>
+                <div className='w4 pad' style={{ minWidth: "300px" }}>
                     <div className='card w12 pad'>
-                        <article className='w9'>
+                        <article className='w9 m9'>
                             <h3>Instagram</h3>
                             <p>
                                 Visit us on Instagram at
@@ -144,7 +144,7 @@ export default function Contact() {
                             </p>
                         </article>
                         <a
-                            className='w3 center-vertical'
+                            className='w3 m3 center-vertical'
                             href='https://www.instagram.com'
                         >
                             <FaInstagram className='social-icon' />

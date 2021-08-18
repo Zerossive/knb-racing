@@ -32,7 +32,7 @@ const Sponsors = () => {
                                 style={{ objectFit: "contain" }}
                             />
                             <article className='w8 pad'>
-                                <h1>{name}</h1>
+                                <h2>{name}</h2>
                                 <p>{desc}</p>
                                 <button className='btn w12'>
                                     <a href='https://jmrbodyworks.com/'>

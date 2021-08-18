@@ -6,6 +6,7 @@ export default function Races() {
     const { url } = bgImages[Math.floor(Math.random() * bgImages.length)];
 
     const [races, setRaces] = useState([]);
+    const [showImages, setShowImages] = useState(true);
 
     useEffect(() => {
         client
@@ -28,31 +29,6 @@ export default function Races() {
                 backgroundImage: `url(${url})`,
             }}
         >
-            {/* <div className='race-container'>
-                {raceData.map((race) => {
-                    const { place, name, location, date, image } = race;
-                    return (
-                        <section key={name} className='event-card'>
-                            <div
-                                className='event-card-image'
-                                style={{
-                                    backgroundImage: `url(${image})`,
-                                }}
-                            >
-                                <h1>{place}</h1>
-                            </div>
-                            <article>
-                                <h2>
-                                    <span>{name}</span>
-                                </h2>
-                                <p>{location}</p>
-                                <p>{date}</p>
-                            </article>
-                        </section>
-                    );
-                })}
-            </div> */}
-
             {/* Races v2 */}
             <div
                 className='grid-container'
@@ -65,59 +41,18 @@ export default function Races() {
                     <div className='w4'></div>
                 </div>
 
-                {/* Races */}
-                {/* {raceData.map((race) => {
-                    const { place, name, location, date, image1, image2 } =
-                        race;
-                    return (
-                        <div
-                            className='grid-item w12 card-list-item'
-                            key={date}
+                {/* Buttons */}
+                <div className='w12 center-vertical'>
+                    {/* Show/Hide Images */}
+                    <div className='pad'>
+                        <button
+                            className='btn'
+                            onClick={() => setShowImages(!showImages)}
                         >
-                            <div className='card w12'>
-                                <div
-                                    className='grid-image bg-image w3 '
-                                    style={{
-                                        backgroundImage: `url(${image1})`,
-                                    }}
-                                >
-                                    <div className='w12'></div>
-                                    <div className='w12'></div>
-                                    <h1 className=''>
-                                        <span>{place}</span>
-                                    </h1>
-                                    <div className='w12'></div>
-                                    <div className='w12'></div>
-                                </div>
-                                <article className='w6 grid-item'>
-                                    <h2 className='title w4 center-vertical'>
-                                        <span>{name}</span>
-                                    </h2>
-                                    <h3 className='title w4 center-vertical'>
-                                        {location}
-                                    </h3>
-                                    <h3 className='title w4 center-vertical'>
-                                        {date}
-                                    </h3>
-                                </article>
-                                <div
-                                    className='grid-image bg-image-right bg-image w3 center-vertical'
-                                    style={{
-                                        backgroundImage: `url(${image2})`,
-                                    }}
-                                >
-                                    <div className='w12'></div>
-                                    <div className='w12'></div>
-                                    <h1 className='title'>
-                                        <span></span>
-                                    </h1>
-                                    <div className='w12'></div>
-                                    <div className='w12'></div>
-                                </div>
-                            </div>
-                        </div>
-                    );
-                })} */}
+                            {showImages ? "hide images" : "show images"}
+                        </button>
+                    </div>
+                </div>
 
                 {/* Races (CMS) */}
                 {races.map((race) => {
@@ -133,30 +68,15 @@ export default function Races() {
                         <div className='grid-item w12' key={date}>
                             <div className='card w12'>
                                 {/* Left Image */}
-                                <div
-                                    className='w3 pad'
-                                    style={{
-                                        backgroundImage: `url(${image1.fields.file.url})`,
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                    }}
-                                >
-                                    <div className='w12 pad'></div>
-                                    <div className='w12 pad'></div>
-                                    {/* <h1>
-                                        <span
-                                            style={{
-                                                WebkitTextStroke: "1px white",
-                                                fontSize: "5rem",
-                                            }}
-                                            className='pad-2'
-                                        >
-                                            #{placement}
-                                        </span>
-                                    </h1> */}
-                                    <div className='w12 pad'></div>
-                                    <div className='w12 pad'></div>
-                                </div>
+                                {showImages && (
+                                    <div
+                                        className='w3 bg-img'
+                                        style={{
+                                            backgroundImage: `url(${image1.fields.file.url})`,
+                                            minHeight: "250px",
+                                        }}
+                                    />
+                                )}
                                 {/* Body */}
                                 <div className='w6 grid-item'>
                                     {/* Placement */}
@@ -171,7 +91,7 @@ export default function Races() {
                                         </span>
                                     </h1>
                                     {/* Race Info */}
-                                    <article className='w6 m8'>
+                                    <article className='w6 m8 pad center-vertical'>
                                         <h2 className='w12'>
                                             <span>{trackName}</span>
                                         </h2>
@@ -180,21 +100,15 @@ export default function Races() {
                                     </article>
                                 </div>
                                 {/* Right Image */}
-                                <div
-                                    className='w3 pad'
-                                    style={{
-                                        backgroundImage: `url(${image2.fields.file.url})`,
-                                        backgroundSize: "cover",
-                                        backgroundPosition: "center",
-                                    }}
-                                >
-                                    <div className='w12 pad'></div>
-                                    <div className='w12 pad'></div>
-                                    <div className='w12 pad'></div>
-                                    <div className='w12 pad'></div>
-                                    <div className='w12 pad'></div>
-                                    <div className='w12 pad'></div>
-                                </div>
+                                {showImages && (
+                                    <div
+                                        className='w3 bg-img'
+                                        style={{
+                                            backgroundImage: `url(${image2.fields.file.url})`,
+                                            minHeight: "250px",
+                                        }}
+                                    />
+                                )}
                             </div>
                         </div>
                     );

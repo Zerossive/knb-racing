@@ -13,11 +13,18 @@ export default function Home() {
         >
             <div className='grid-container'>
                 <div className='grid-item card w12'>
-                    <img
+                    {/* <img
                         src={raceData[0].image1}
                         // src={`${process.env.PUBLIC_URL}/assets/images/first_win.jpg`}
                         alt={raceData[0].name}
-                        className='w4'
+                        className='w4 grid-img'
+                    /> */}
+                    <div
+                        className='w4 bg-img'
+                        style={{
+                            backgroundImage: `url(${raceData[0].image1})`,
+                            minHeight: "350px",
+                        }}
                     />
                     <article className='w8 pad-2 center-vertical'>
                         <h2 className='w12' style={{ textAlign: "justify" }}>
@@ -26,8 +33,8 @@ export default function Home() {
                         <p
                             className='w12'
                             style={{
-                                fontSize: "1.2rem",
-                                lineHeight: "2.4rem",
+                                fontSize: "1.1rem",
+                                lineHeight: "2.2rem",
                             }}
                         >
                             I was born on November 28, 2006 in Mesquite TX. I
