@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../client";
-import { raceData, bgImages } from "../data";
+import { bgImages } from "../data";
 
 export default function Races() {
     const { url } = bgImages[Math.floor(Math.random() * bgImages.length)];

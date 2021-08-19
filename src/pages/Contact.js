@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { client } from "../client";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { bgImages } from "../data";
-import {
-    FaTwitter,
-    FaFacebook,
-    FaYoutube,
-    FaInstagram,
-    FaRegEnvelope,
-} from "react-icons/fa";
+import Social from "../components/Social";
 
 export default function Contact() {
     const { url } = bgImages[Math.floor(Math.random() * bgImages.length)];
+
+    const [socials, setSocials] = useState([]);
+
+    useEffect(() => {
+        client
+            .getEntries({
+                content_type: "socials",
+            })
+            .then((response) => {
+                let sortedItems = response.items.sort((a, b) => {
+                    return a.fields.index - b.fields.index;
+                });
+                sortedItems.map((item) => {
+                    item.fields.body = documentToHtmlString(item.fields.body);
+                    return item;
+                });
+                setSocials(sortedItems);
+            })
+            .catch(console.error);
+    }, []);
 
     return (
         <main
@@ -26,131 +42,19 @@ export default function Contact() {
                     <div className='w4'></div>
                 </div>
 
-                {/* Email */}
-                <div className='w4 pad' style={{ minWidth: "300px" }}>
-                    <div className='card w12 pad'>
-                        <article className='w9 m9'>
-                            <h3>Email</h3>
-                            <p>
-                                Contact us through email at{" "}
-                                <a
-                                    href='#'
-                                    onClick={() => {
-                                        navigator.clipboard.writeText(
-                                            "knbracer@gmail.com"
-                                        );
-                                    }}
-                                >
-                                    knbracer@gmail.com
-                                </a>
-                                . Click text or icon to copy email to clipboard.
-                            </p>
-                        </article>
-                        <a
-                            className='w3 m3 center-vertical '
-                            href='#'
-                            onClick={() => {
-                                navigator.clipboard.writeText(
-                                    "knbracer@gmail.com"
-                                );
-                            }}
-                        >
-                            <FaRegEnvelope className='social-icon' />
-                        </a>
-                    </div>
-                </div>
-
-                {/* Facebook */}
-                <div className='w4 pad' style={{ minWidth: "300px" }}>
-                    <div className='card w12 pad'>
-                        <article className='w9 m9'>
-                            <h3>Facebook</h3>
-                            <p>
-                                Visit us on Facebook at
-                                <a href='https://www.facebook.com/deanboyce1304'>
-                                    {" "}
-                                    Kaylee Boyce
-                                </a>
-                                , where we post...
-                            </p>
-                        </article>
-                        <a
-                            className='w3 m3 center-vertical'
-                            href='https://www.facebook.com/deanboyce1304'
-                        >
-                            <FaFacebook className='social-icon' />
-                        </a>
-                    </div>
-                </div>
-
-                {/* Twitter */}
-                <div className='w4 pad' style={{ minWidth: "300px" }}>
-                    <div className='card w12 pad'>
-                        <article className='w9 m9'>
-                            <h3>Twitter</h3>
-                            <p>
-                                Visit us on Twitter at
-                                <a href='http://www.twitter.com'>
-                                    {" "}
-                                    Kaylee Boyce
-                                </a>
-                                , where we post...
-                            </p>
-                        </article>
-                        <a
-                            className='w3 m3 center-vertical'
-                            href='http://www.twitter.com'
-                        >
-                            <FaTwitter className='social-icon' />
-                        </a>
-                    </div>
-                </div>
-
-                {/* YouTube */}
-                <div className='w4 pad' style={{ minWidth: "300px" }}>
-                    <div className='card w12 pad'>
-                        <article className='w9 m9'>
-                            <h3>YouTube</h3>
-                            <p>
-                                Visit us on YouTube at
-                                <a href='https://www.youtube.com/channel/UCIXZTX6nqppy094SViYq96A'>
-                                    {" "}
-                                    Kaylee Boyce
-                                </a>
-                                , where we post clips of Kaylee driving.
-                            </p>
-                        </article>
-                        <a
-                            className='w3 m3 center-vertical'
-                            href='https://www.youtube.com/channel/UCIXZTX6nqppy094SViYq96A'
-                        >
-                            <FaYoutube className='social-icon' />
-                        </a>
-                    </div>
-                </div>
-
-                {/* Instagram */}
-                <div className='w4 pad' style={{ minWidth: "300px" }}>
-                    <div className='card w12 pad'>
-                        <article className='w9 m9'>
-                            <h3>Instagram</h3>
-                            <p>
-                                Visit us on Instagram at
-                                <a href='https://www.instagram.com'>
-                                    {" "}
-                                    KNB Racing
-                                </a>
-                                , where we post...
-                            </p>
-                        </article>
-                        <a
-                            className='w3 m3 center-vertical'
-                            href='https://www.instagram.com'
-                        >
-                            <FaInstagram className='social-icon' />
-                        </a>
-                    </div>
-                </div>
+                {/* Socials */}
+                <Social
+                    data={{
+                        name: "Email",
+                        body: "Contact us through email at knbracer@gmail.com.",
+                        logo: "",
+                    }}
+                />
+                {socials.map((social) => {
+                    return (
+                        <Social data={social.fields} key={social.fields.name} />
+                    );
+                })}
             </div>
         </main>
     );

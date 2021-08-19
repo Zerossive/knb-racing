@@ -42,29 +42,3 @@ export const raceData = [
         date: "June 19, 2021",
     },
 ];
-
-export const sponsorData = [
-    {
-        name: "JM&R Body Works",
-        desc: "At JM&R Body Works, we are leading the way as Dallas Metroplex's most equipped body shop founded in August 2015 by John Chisolm, previous owner of W&B Service Company and John Keith, long time body technician and former United States Reconnaissance Marine. We strive to maintain a professional and courteous staff that is experienced and well trained. We have over 250 years of combined work experience. With excellent workmanship, we are ready to provide you services that exceed your expectations. We can service and repair any make or model tractor. We are founded on honest, hardworking ethics that are evident by our estimates and work. We strive to give you a quality repair the fastest so we can to get you back on the road.",
-        image: "https://jmrbodyworks.com/user/themes/mache/images/logo.png",
-    },
-];
-
-// export const socials = [
-//     {
-//         service: "Facebook",
-//         name: "Kaylee Boyce",
-//         link: "http://www.facebook.com",
-//     },
-//     {
-//         service: "Twitter",
-//         name: "Kaylee Boyce",
-//         link: "http://www.twitter.com",
-//     },
-//     {
-//         service: "YouTube",
-//         name: "Kaylee Boyce",
-//         link: "http://www.youtube.com",
-//     },
-// ];

@@ -164,11 +164,6 @@ a {
 .full-width {
     margin: calc(var(--padding-spacing) * -1);
 }
-.social-icon {
-    width: 50px;
-    height: auto;
-    color: var(--clr-primary-7);
-}
 
 /* Navbar */
 nav {
@@ -442,7 +437,7 @@ nav {
 }
 iframe {
     border: none;
-    border-radius: calc(var(--border-radius) * 7);
+    /* border-radius: calc(var(--border-radius) * 7); */
 }
 span {
     color: var(--clr-text-primary);
