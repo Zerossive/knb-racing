@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Races from "./pages/Races";
 import Sponsors from "./pages/Sponsors";
 import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 import Error from "./pages/Error";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
                     <Error />
                 </Route>
             </Switch>
+            <Footer />
         </Router>
     );
 }

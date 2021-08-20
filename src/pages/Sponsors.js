@@ -1,10 +1,10 @@
 import { React, useEffect, useState } from "react";
 import { client } from "../client";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { bgImages } from "../data";
+import { useGlobalContext } from "../context";
 
 const Sponsors = () => {
-    const { url } = bgImages[Math.floor(Math.random() * bgImages.length)];
+    const generalData = useGlobalContext().generalData;
 
     const [sponsors, setSponsors] = useState([]);
 
@@ -30,7 +30,10 @@ const Sponsors = () => {
         <main
             className='bg'
             style={{
-                backgroundImage: `url(${url})`,
+                backgroundImage: `url(${
+                    generalData.backgroundImage &&
+                    generalData.backgroundImage.fields.file.url
+                })`,
             }}
         >
             <div className='grid-container'>

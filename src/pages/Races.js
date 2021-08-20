@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../client";
-import { bgImages } from "../data";
+import { useGlobalContext } from "../context";
 
 export default function Races() {
-    const { url } = bgImages[Math.floor(Math.random() * bgImages.length)];
+    const generalData = useGlobalContext().generalData;
 
     const [races, setRaces] = useState([]);
     const [showImages, setShowImages] = useState(true);
@@ -26,7 +26,10 @@ export default function Races() {
         <main
             className='bg'
             style={{
-                backgroundImage: `url(${url})`,
+                backgroundImage: `url(${
+                    generalData.backgroundImage &&
+                    generalData.backgroundImage.fields.file.url
+                })`,
             }}
         >
             {/* Races v2 */}

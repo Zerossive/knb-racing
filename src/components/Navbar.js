@@ -1,38 +1,43 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { links } from "../data";
+import { useGlobalContext } from "../context";
 import { FaAngleDown } from "react-icons/fa";
+import CSS from "./Navbar.module.css";
 
 const Navbar = () => {
+    const generalData = useGlobalContext().generalData;
+
     const [isMenuShown, setIsMenuShown] = useState(false);
+
     return (
         <nav>
-            <div className='nav-header'>
-                <div className='logo-container'>
-                    <img
-                        src='https://i.imgur.com/ivXJXKR.png'
-                        alt='logo'
-                        className='logo'
-                    />
-                    {/* <FaCar className='react-icon' /> */}
+            <div className={CSS.navHeader}>
+                <div className={CSS.logoContainer}>
+                    {generalData.logoWhite && (
+                        <img
+                            src={generalData.logoWhite.fields.file.url}
+                            alt={`${generalData.brandName} logo`}
+                            className={CSS.logo}
+                        />
+                    )}
                 </div>
-                <Link to='/' className='title'>
-                    <h1>KNB Racing</h1>
+                <Link to='/' className={CSS.title}>
+                    <h1>{generalData.brandName}</h1>
                 </Link>
                 <div
-                    className={`menu-btn ${isMenuShown && "flip"}`}
+                    className={`${CSS.menuBtn} ${isMenuShown && CSS.flip}`}
                     onClick={() => setIsMenuShown(!isMenuShown)}
                 >
-                    {/* <Link to=''>
-                    </Link> */}
-                    <FaAngleDown className='react-icon' />
+                    <FaAngleDown className={CSS.reactIcon} />
                 </div>
             </div>
             <div
-                className={`links-container ${isMenuShown && "show-links"}`}
-                // style={{ height: `${isMenuShown ? "100%" : "0px"}` }}
+                className={`${CSS.linksContainer} ${
+                    isMenuShown && CSS.showLinks
+                }`}
             >
-                <ul className='links'>
+                <ul className={CSS.links}>
                     {links.map((link) => {
                         const { name, url } = link;
                         return (

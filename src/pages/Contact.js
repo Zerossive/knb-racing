@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { client } from "../client";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { bgImages } from "../data";
+import { useGlobalContext } from "../context";
 import Social from "../components/Social";
 
 export default function Contact() {
-    const { url } = bgImages[Math.floor(Math.random() * bgImages.length)];
+    const generalData = useGlobalContext().generalData;
 
     const [socials, setSocials] = useState([]);
 
@@ -31,7 +31,10 @@ export default function Contact() {
         <main
             className='bg'
             style={{
-                backgroundImage: `url(${url})`,
+                backgroundImage: `url(${
+                    generalData.backgroundImage &&
+                    generalData.backgroundImage.fields.file.url
+                })`,
             }}
         >
             <div className='grid-container'>
