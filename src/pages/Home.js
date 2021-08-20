@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 import { client } from "../client";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { useGlobalContext } from "../context";
+import ReactPlayer from "react-player";
 
 export default function Home() {
     const generalData = useGlobalContext().generalData;
@@ -43,6 +44,7 @@ export default function Home() {
 
                     return (
                         <div className='grid-item card w12' key={index}>
+                            {/* Image */}
                             <div
                                 className='w4 bg-img'
                                 style={{
@@ -50,6 +52,7 @@ export default function Home() {
                                     minHeight: "350px",
                                 }}
                             />
+                            {/* Body */}
                             <article className='w8 pad-2 center-vertical'>
                                 <h2
                                     className='w12'
@@ -71,51 +74,34 @@ export default function Home() {
                 })}
 
                 {/* Videos */}
-                <div className='grid-item w12 center-vertical'>
-                    <div className='w4 pad'>
-                        <div className='w12 pad card'>
+                <div className='w12 grid-item center-vertical'>
+                    {/* YT Video */}
+                    <div className='w6 pad'>
+                        <div className='w12 card'>
+                            {/* Title */}
                             <h2 className='w12 title'>
                                 first time behind the wheel
                             </h2>
+                            {/* Video */}
+                            <ReactPlayer
+                                url='https://www.youtube.com/watch?v=I0KIFlzVAHk'
+                                controls={true}
+                                light={true}
+                                playing={true}
+                                width='100%'
+                                height='auto'
+                                style={{ aspectRatio: "16/9" }}
+                            />
+                            {/* Description */}
+                            {/* <article className='w12 pad'>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit. Aperiam ab libero iste
+                                    dolore ipsa pariatur dolores reiciendis
+                                    eveniet officiis enim.
+                                </p>
+                            </article> */}
                         </div>
-                        <iframe
-                            width='auto'
-                            height='auto'
-                            title='youtube video'
-                            style={{
-                                // border: "none",
-                                // overflow: "hidden",
-                                aspectRatio: "9/16",
-                                // borderRadius: "45px",
-                                // minHeight: "700px",
-                            }}
-                            className='w12 pad'
-                            src='https://www.youtube.com/embed/I0KIFlzVAHk'
-                        ></iframe>
-                    </div>
-                    <div className='w4 pad'>
-                        <div className='w12 pad card'>
-                            <h2 className='w12 title'>first race</h2>
-                        </div>
-                        <iframe
-                            src='https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fdeanboyce1304%2Fvideos%2F1037324196676505%2F&width=500&show_text=false&height=888&appId'
-                            width='auto'
-                            height='auto'
-                            title='facebook video'
-                            style={{
-                                // border: "none",
-                                // overflow: "hidden",
-                                aspectRatio: "9/16",
-                                // borderRadius: "45px",
-                                // minHeight: "800px",
-                            }}
-                            className='w12 pad'
-                            // scrolling='no'
-                            frameborder='0'
-                            allowfullscreen='true'
-                            allow='autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share'
-                            allowFullScreen='true'
-                        ></iframe>
                     </div>
                 </div>
             </div>
