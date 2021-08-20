@@ -37,5 +37,9 @@ footer span {
 .socialLogo {
     height: 30px;
     width: auto;
-    /* margin: var(--margin-spacing); */
+    filter: grayscale(1);
+    transition: var(--transition-fast);
+}
+.socialLogo:hover {
+    filter: grayscale(0);
 }

@@ -3,18 +3,34 @@ import { client } from "../client";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { useGlobalContext } from "../context";
 import ReactPlayer from "react-player";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
 
 export default function Home() {
     const generalData = useGlobalContext().generalData;
 
+    const [images, setImages] = useState([]);
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
         client
             .getEntries({
+                content_type: "homeCarousel",
+            })
+            .then((response) => {
+                // Sort and format rich text
+                let sortedItems = response.items.sort((a, b) => {
+                    return a.fields.index - b.fields.index;
+                });
+                setImages(sortedItems);
+            })
+            .catch(console.error);
+        client
+            .getEntries({
                 content_type: "homeArticles",
             })
             .then((response) => {
+                // Sort and format rich text
                 let sortedItems = response.items.sort((a, b) => {
                     return a.fields.index - b.fields.index;
                 });
@@ -37,6 +53,43 @@ export default function Home() {
                 })`,
             }}
         >
+            {/* Carousel */}
+            {images[0] && (
+                <div
+                    className='grid-container full-width center'
+                    style={{ marginBottom: "10px" }}
+                >
+                    <Carousel
+                        autoPlay={true}
+                        // interval={1000}
+                        infiniteLoop={true}
+                        dynamicHeight={true}
+                        showStatus={false}
+                        showThumbs={false}
+                        swipeable={true}
+                        emulateTouch={true}
+                    >
+                        {images.map((article) => {
+                            const { image, description, index } =
+                                article.fields;
+                            return (
+                                <div className='' key={index}>
+                                    <img
+                                        src={image.fields.file.url}
+                                        className='grid-img'
+                                        alt={description}
+                                        style={{
+                                            height: "50vh",
+                                            minHeight: "300px",
+                                        }}
+                                    />
+                                    <p className='legend'>{description}</p>
+                                </div>
+                            );
+                        })}
+                    </Carousel>
+                </div>
+            )}
             <div className='grid-container'>
                 {/* Articles */}
                 {articles.map((article) => {

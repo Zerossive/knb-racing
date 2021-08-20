@@ -175,7 +175,7 @@ a {
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;
-    margin-top: calc(var(--margin-spacing) * -1);
+    margin-top: calc(var(--padding-spacing) * -1);
 
     /* TESTING ANIMATION */
     animation: var(--duration) fadeIn;

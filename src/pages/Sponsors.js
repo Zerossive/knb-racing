@@ -59,9 +59,9 @@ const Sponsors = () => {
                             />
                             <article className='w8 pad'>
                                 <h2>{sponsorName}</h2>
-                                <p
+                                <div
                                     dangerouslySetInnerHTML={{ __html: body }}
-                                ></p>
+                                ></div>
                                 <a href={websiteAddress}>
                                     <button className='btn w12'>
                                         Visit {sponsorName}
