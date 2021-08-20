@@ -22,7 +22,7 @@ const Navbar = () => {
                         />
                     )}
                 </div>
-                <Link to='/' className={CSS.title}>
+                <Link to='/' className={`${CSS.title} title`}>
                     <h1>{generalData.brandName}</h1>
                 </Link>
                 <div
