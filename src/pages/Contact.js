@@ -46,13 +46,6 @@ export default function Contact() {
                 </div>
 
                 {/* Socials */}
-                <Social
-                    data={{
-                        name: "Email",
-                        body: "Contact us through email at knbracer@gmail.com.",
-                        logo: "",
-                    }}
-                />
                 {socials.map((social) => {
                     return (
                         <Social data={social.fields} key={social.fields.name} />

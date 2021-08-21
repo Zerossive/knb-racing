@@ -77,6 +77,7 @@ const Footer = () => {
                 <div className={`w4 ${CSS.logoContainer}`}>
                     {socials.map((social) => {
                         const { name, logo, link } = social.fields;
+                        if (!logo || !link) return null;
                         return (
                             <a href={link} key={name}>
                                 <img
