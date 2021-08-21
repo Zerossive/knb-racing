@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../client";
 import { useGlobalContext } from "../context";
+import Race from "../components/Race";
 
 export default function Races() {
     const generalData = useGlobalContext().generalData;
 
     const [races, setRaces] = useState([]);
+    const [filteredRaces, setFilteredRaces] = useState([]);
     const [showImages, setShowImages] = useState(true);
 
     useEffect(() => {
@@ -18,9 +20,24 @@ export default function Races() {
                     return a.fields.index - b.fields.index;
                 });
                 setRaces(sortedItems);
+                setFilteredRaces(sortedItems);
             })
             .catch(console.error);
     }, []);
+
+    const searchRaces = (e) => {
+        const newRaceList = races.filter((race) => {
+            if (
+                race.fields.trackName.toUpperCase().includes(e.toUpperCase()) ||
+                race.fields.location.toUpperCase().includes(e.toUpperCase()) ||
+                race.fields.date.toUpperCase().includes(e.toUpperCase())
+            ) {
+                return 1;
+            }
+            return 0;
+        });
+        setFilteredRaces(newRaceList);
+    };
 
     return (
         <main
@@ -55,65 +72,27 @@ export default function Races() {
                             {showImages ? "hide images" : "show images"}
                         </button>
                     </div>
+                    {/* Search */}
+                    <div className='pad'>
+                        <input
+                            type='text'
+                            className='search'
+                            placeholder='Search Races'
+                            onChange={(e) => {
+                                searchRaces(e.target.value);
+                            }}
+                        />
+                    </div>
                 </div>
 
                 {/* Races (CMS) */}
-                {races.map((race) => {
-                    const {
-                        placement,
-                        image1,
-                        trackName,
-                        location,
-                        date,
-                        image2,
-                    } = race.fields;
+                {filteredRaces.map((race) => {
                     return (
-                        <div className='grid-item w12' key={date}>
-                            <div className='card w12'>
-                                {/* Left Image */}
-                                {showImages && (
-                                    <div
-                                        className='w3 bg-img'
-                                        style={{
-                                            backgroundImage: `url(${image1.fields.file.url})`,
-                                            minHeight: "250px",
-                                        }}
-                                    />
-                                )}
-                                {/* Body */}
-                                <div className='w6 grid-item'>
-                                    {/* Placement */}
-                                    <h1 className='w6 m4 pad center-vertical'>
-                                        <span
-                                            style={{
-                                                // WebkitTextStroke: "2px black",
-                                                fontSize: "5rem",
-                                            }}
-                                        >
-                                            #{placement}
-                                        </span>
-                                    </h1>
-                                    {/* Race Info */}
-                                    <article className='w6 m8 pad center-vertical'>
-                                        <h2 className='w12'>
-                                            <span>{trackName}</span>
-                                        </h2>
-                                        <h3 className='w12'>{location}</h3>
-                                        <h3 className='w12'>{date}</h3>
-                                    </article>
-                                </div>
-                                {/* Right Image */}
-                                {showImages && (
-                                    <div
-                                        className='w3 bg-img'
-                                        style={{
-                                            backgroundImage: `url(${image2.fields.file.url})`,
-                                            minHeight: "250px",
-                                        }}
-                                    />
-                                )}
-                            </div>
-                        </div>
+                        <Race
+                            raceData={race.fields}
+                            showImages={showImages}
+                            key={race.fields.date}
+                        />
                     );
                 })}
             </div>
