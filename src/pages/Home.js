@@ -123,7 +123,7 @@ export default function Home() {
             <div className='grid-container'>
                 {/* Buttons */}
                 {(articles[0] || videos[0]) && (
-                    <div className='w12 center-vertical'>
+                    <div className='w12 center-vertical anim-fade'>
                         {/* Show All */}
                         {
                             <div className='pad m12 center'>

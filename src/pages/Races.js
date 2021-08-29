@@ -63,7 +63,7 @@ export default function Races() {
 
                 {/* Buttons */}
                 {races[0] && (
-                    <div className='w12 center-vertical'>
+                    <div className='w12 center-vertical anim-fade'>
                         {/* Show/Hide Images */}
                         <div className='pad m12 center'>
                             <button
