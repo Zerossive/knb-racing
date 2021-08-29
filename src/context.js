@@ -14,6 +14,12 @@ const AppProvider = ({ children }) => {
                 setGeneralData(response.items[0].fields);
             })
             .catch(console.error);
+
+        // Fix to prevent odd behavior on repeated refreshes
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
     }, []);
     return (
         <AppContext.Provider value={{ generalData }}>

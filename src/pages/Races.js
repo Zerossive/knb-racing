@@ -64,7 +64,7 @@ export default function Races() {
                 {/* Buttons */}
                 <div className='w12 center-vertical'>
                     {/* Show/Hide Images */}
-                    <div className='pad'>
+                    <div className='pad m12 center'>
                         <button
                             className='btn'
                             onClick={() => setShowImages(!showImages)}
@@ -73,7 +73,7 @@ export default function Races() {
                         </button>
                     </div>
                     {/* Search */}
-                    <div className='pad'>
+                    <div className='pad m12 center'>
                         <input
                             type='text'
                             className='search'

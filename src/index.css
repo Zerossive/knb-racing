@@ -385,3 +385,27 @@ span {
     /* padding: calc(var(--padding-spacing) * 2); */
     /* border-radius: calc(var(--border-radius) * 11); */
 }
+
+/* Animations */
+.anim-fade {
+    animation: var(--duration-long) animFade;
+}
+@keyframes animFade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.anim-grow {
+    animation: var(--duration) animGrow;
+}
+@keyframes animGrow {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

@@ -92,6 +92,7 @@ export default function Home() {
                         showThumbs={false}
                         swipeable={true}
                         emulateTouch={true}
+                        transitionTime={1000}
                     >
                         {images.map((article) => {
                             const { image, description, index } =
@@ -121,10 +122,13 @@ export default function Home() {
             )}
             <div className='grid-container'>
                 {/* Buttons */}
-                <div className='w12 center-vertical'>
+                <div
+                    className='w12 center-vertical anim-fade' // specific to this page
+                    style={{ animationDuration: "2s" }} // specific to this page
+                >
                     {/* Show All */}
                     {
-                        <div className='pad'>
+                        <div className='pad m12 center'>
                             <button
                                 className='btn'
                                 onClick={() => {
@@ -137,7 +141,7 @@ export default function Home() {
                         </div>
                     }
                     {/* Show Articles */}
-                    <div className='pad'>
+                    <div className='pad m12 center'>
                         <button
                             className='btn'
                             onClick={() => setShowArticles(!showArticles)}
@@ -146,7 +150,7 @@ export default function Home() {
                         </button>
                     </div>
                     {/* Show Videos */}
-                    <div className='pad'>
+                    <div className='pad m12 center'>
                         <button
                             className='btn'
                             onClick={() => setShowVideos(!showVideos)}
