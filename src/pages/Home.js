@@ -122,43 +122,44 @@ export default function Home() {
             )}
             <div className='grid-container'>
                 {/* Buttons */}
-                <div
-                    className='w12 center-vertical anim-fade' // specific to this page
-                    style={{ animationDuration: "2s" }} // specific to this page
-                >
-                    {/* Show All */}
-                    {
+                {(articles[0] || videos[0]) && (
+                    <div className='w12 center-vertical'>
+                        {/* Show All */}
+                        {
+                            <div className='pad m12 center'>
+                                <button
+                                    className='btn'
+                                    onClick={() => {
+                                        setShowArticles(true);
+                                        setShowVideos(true);
+                                    }}
+                                >
+                                    show all
+                                </button>
+                            </div>
+                        }
+                        {/* Show Articles */}
                         <div className='pad m12 center'>
                             <button
                                 className='btn'
-                                onClick={() => {
-                                    setShowArticles(true);
-                                    setShowVideos(true);
-                                }}
+                                onClick={() => setShowArticles(!showArticles)}
                             >
-                                show all
+                                {showArticles
+                                    ? "hide articles"
+                                    : "show articles"}
                             </button>
                         </div>
-                    }
-                    {/* Show Articles */}
-                    <div className='pad m12 center'>
-                        <button
-                            className='btn'
-                            onClick={() => setShowArticles(!showArticles)}
-                        >
-                            {showArticles ? "hide articles" : "show articles"}
-                        </button>
+                        {/* Show Videos */}
+                        <div className='pad m12 center'>
+                            <button
+                                className='btn'
+                                onClick={() => setShowVideos(!showVideos)}
+                            >
+                                {showVideos ? "hide videos" : "show videos"}
+                            </button>
+                        </div>
                     </div>
-                    {/* Show Videos */}
-                    <div className='pad m12 center'>
-                        <button
-                            className='btn'
-                            onClick={() => setShowVideos(!showVideos)}
-                        >
-                            {showVideos ? "hide videos" : "show videos"}
-                        </button>
-                    </div>
-                </div>
+                )}
 
                 {/* Articles */}
                 {showArticles &&

@@ -62,28 +62,30 @@ export default function Races() {
                 </div>
 
                 {/* Buttons */}
-                <div className='w12 center-vertical'>
-                    {/* Show/Hide Images */}
-                    <div className='pad m12 center'>
-                        <button
-                            className='btn'
-                            onClick={() => setShowImages(!showImages)}
-                        >
-                            {showImages ? "hide images" : "show images"}
-                        </button>
+                {races[0] && (
+                    <div className='w12 center-vertical'>
+                        {/* Show/Hide Images */}
+                        <div className='pad m12 center'>
+                            <button
+                                className='btn'
+                                onClick={() => setShowImages(!showImages)}
+                            >
+                                {showImages ? "hide images" : "show images"}
+                            </button>
+                        </div>
+                        {/* Search */}
+                        <div className='pad m12 center'>
+                            <input
+                                type='text'
+                                className='search'
+                                placeholder='Search Races'
+                                onChange={(e) => {
+                                    searchRaces(e.target.value);
+                                }}
+                            />
+                        </div>
                     </div>
-                    {/* Search */}
-                    <div className='pad m12 center'>
-                        <input
-                            type='text'
-                            className='search'
-                            placeholder='Search Races'
-                            onChange={(e) => {
-                                searchRaces(e.target.value);
-                            }}
-                        />
-                    </div>
-                </div>
+                )}
 
                 {/* Races (CMS) */}
                 {filteredRaces.map((race) => {
