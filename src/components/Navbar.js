@@ -15,7 +15,16 @@ const Navbar = () => {
             <div className={CSS.navHeader}>
                 <div className={CSS.logoContainer}>
                     {generalData.logoWhite && (
-                        <Link to='/' onClick={() => setIsMenuShown(false)}>
+                        <Link
+                            to='/'
+                            onClick={() => {
+                                setIsMenuShown(false);
+                                window.scrollTo({
+                                    top: 0,
+                                    behavior: "smooth",
+                                });
+                            }}
+                        >
                             <img
                                 src={generalData.logoWhite.fields.file.url}
                                 alt={`${generalData.brandName} logo`}
@@ -27,7 +36,13 @@ const Navbar = () => {
                 <Link
                     to='/'
                     className={`${CSS.title} title`}
-                    onClick={() => setIsMenuShown(false)}
+                    onClick={() => {
+                        setIsMenuShown(false);
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                        });
+                    }}
                 >
                     <h1>{generalData.brandName}</h1>
                 </Link>
@@ -50,7 +65,13 @@ const Navbar = () => {
                             <Link
                                 key={name}
                                 to={`${url}`}
-                                onClick={() => setIsMenuShown(false)}
+                                onClick={() => {
+                                    setIsMenuShown(false);
+                                    window.scrollTo({
+                                        top: 0,
+                                        behavior: "smooth",
+                                    });
+                                }}
                             >
                                 <li>{name}</li>
                             </Link>
