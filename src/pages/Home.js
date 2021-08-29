@@ -12,6 +12,8 @@ export default function Home() {
     const [images, setImages] = useState([]);
     const [articles, setArticles] = useState([]);
     const [videos, setVideos] = useState([]);
+    const [showArticles, setShowArticles] = useState(true);
+    const [showVideos, setShowVideos] = useState(true);
 
     useEffect(() => {
         // Get carousel data
@@ -118,81 +120,123 @@ export default function Home() {
                 </div>
             )}
             <div className='grid-container'>
-                {/* Articles */}
-                {articles.map((article) => {
-                    const { image, title, body, index } = article.fields;
-
-                    return (
-                        <div className='grid-item card w12' key={index}>
-                            {/* Image */}
-                            <div
-                                className='w4 bg-img'
-                                style={{
-                                    backgroundImage: `url(${image.fields.file.url})`,
-                                    minHeight: "350px",
+                {/* Buttons */}
+                <div className='w12 center-vertical'>
+                    {/* Show All */}
+                    {
+                        <div className='pad'>
+                            <button
+                                className='btn'
+                                onClick={() => {
+                                    setShowArticles(true);
+                                    setShowVideos(true);
                                 }}
-                            />
-                            {/* Body */}
-                            <article className='w8 pad-2 center-vertical'>
-                                <h2
-                                    className='w12'
-                                    style={{ textAlign: "justify" }}
-                                >
-                                    {title}
-                                </h2>
-                                <p
-                                    className='w12'
-                                    style={{
-                                        fontSize: "1.1rem",
-                                        lineHeight: "2.2rem",
-                                    }}
-                                    dangerouslySetInnerHTML={{ __html: body }}
-                                ></p>
-                            </article>
+                            >
+                                show all
+                            </button>
                         </div>
-                    );
-                })}
+                    }
+                    {/* Show Articles */}
+                    <div className='pad'>
+                        <button
+                            className='btn'
+                            onClick={() => setShowArticles(!showArticles)}
+                        >
+                            {showArticles ? "hide articles" : "show articles"}
+                        </button>
+                    </div>
+                    {/* Show Videos */}
+                    <div className='pad'>
+                        <button
+                            className='btn'
+                            onClick={() => setShowVideos(!showVideos)}
+                        >
+                            {showVideos ? "hide videos" : "show videos"}
+                        </button>
+                    </div>
+                </div>
 
-                <div className='w12 grid-item center-vertical'>
-                    {/* Videos */}
-                    {videos.map((video) => {
-                        const { title, videoUrl, description, index } =
-                            video.fields;
+                {/* Articles */}
+                {showArticles &&
+                    articles.map((article) => {
+                        const { image, title, body, index } = article.fields;
 
                         return (
-                            <div className='w6 pad' key={index}>
-                                <div className='w12 card'>
-                                    {/* Title */}
-                                    {title && (
-                                        <h2 className='w12 title'>{title}</h2>
-                                    )}
-                                    {/* Video */}
-                                    <ReactPlayer
-                                        url={videoUrl}
-                                        controls={true}
-                                        light={true}
-                                        playing={true}
-                                        width='100%'
-                                        height='auto'
+                            <div className='grid-item card w12' key={index}>
+                                {/* Image */}
+                                <div
+                                    className='w4 bg-img'
+                                    style={{
+                                        backgroundImage: `url(${image.fields.file.url})`,
+                                        minHeight: "350px",
+                                    }}
+                                />
+                                {/* Body */}
+                                <article className='w8 pad-2 center-vertical'>
+                                    <h2
+                                        className='w12'
+                                        style={{ textAlign: "justify" }}
+                                    >
+                                        {title}
+                                    </h2>
+                                    <p
+                                        className='w12'
                                         style={{
-                                            aspectRatio: "16/9",
-                                            minHeight: "200px",
+                                            fontSize: "1.1rem",
+                                            lineHeight: "2.2rem",
                                         }}
-                                    />
-                                    {/* Description */}
-                                    {description && (
-                                        <article className='w12 pad'>
-                                            <p
-                                                dangerouslySetInnerHTML={{
-                                                    __html: description,
-                                                }}
-                                            ></p>
-                                        </article>
-                                    )}
-                                </div>
+                                        dangerouslySetInnerHTML={{
+                                            __html: body,
+                                        }}
+                                    ></p>
+                                </article>
                             </div>
                         );
                     })}
+
+                <div className='w12 grid-item center-vertical'>
+                    {/* Videos */}
+                    {showVideos &&
+                        videos.map((video) => {
+                            const { title, videoUrl, description, index } =
+                                video.fields;
+
+                            return (
+                                <div className='w6 pad' key={index}>
+                                    <div className='w12 card'>
+                                        {/* Title */}
+                                        {title && (
+                                            <h2 className='w12 title'>
+                                                {title}
+                                            </h2>
+                                        )}
+                                        {/* Video */}
+                                        <ReactPlayer
+                                            url={videoUrl}
+                                            controls={true}
+                                            light={true}
+                                            playing={true}
+                                            width='100%'
+                                            height='auto'
+                                            style={{
+                                                aspectRatio: "16/9",
+                                                minHeight: "200px",
+                                            }}
+                                        />
+                                        {/* Description */}
+                                        {description && (
+                                            <article className='w12 pad'>
+                                                <p
+                                                    dangerouslySetInnerHTML={{
+                                                        __html: description,
+                                                    }}
+                                                ></p>
+                                            </article>
+                                        )}
+                                    </div>
+                                </div>
+                            );
+                        })}
                 </div>
             </div>
         </main>

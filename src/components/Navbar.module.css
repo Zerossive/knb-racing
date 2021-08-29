@@ -1,7 +1,7 @@
 /* Navbar */
 nav {
     background: var(--clr-white);
-    box-shadow: var(--light-shadow);
+    box-shadow: var(--dark-shadow);
     display: flex;
     justify-content: space-between;
     height: var(--navbar-height);
@@ -13,6 +13,12 @@ nav {
     height: auto;
     flex-wrap: wrap;
     justify-content: space-around;
+
+    /* TESTING FURTHER */
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 .navHeader {
     display: flex;

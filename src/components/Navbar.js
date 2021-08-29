@@ -15,14 +15,20 @@ const Navbar = () => {
             <div className={CSS.navHeader}>
                 <div className={CSS.logoContainer}>
                     {generalData.logoWhite && (
-                        <img
-                            src={generalData.logoWhite.fields.file.url}
-                            alt={`${generalData.brandName} logo`}
-                            className={CSS.logo}
-                        />
+                        <Link to='/' onClick={() => setIsMenuShown(false)}>
+                            <img
+                                src={generalData.logoWhite.fields.file.url}
+                                alt={`${generalData.brandName} logo`}
+                                className={CSS.logo}
+                            />
+                        </Link>
                     )}
                 </div>
-                <Link to='/' className={`${CSS.title} title`}>
+                <Link
+                    to='/'
+                    className={`${CSS.title} title`}
+                    onClick={() => setIsMenuShown(false)}
+                >
                     <h1>{generalData.brandName}</h1>
                 </Link>
                 <div
