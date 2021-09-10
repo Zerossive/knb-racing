@@ -1,6 +1,6 @@
 :root {
     /* Colors */
-    /* blues */
+    /* primaries */
     --clr-primary-1: rgb(50, 8, 102);
     --clr-primary-2: rgb(63, 10, 129);
     --clr-primary-3: rgb(76, 12, 155);
@@ -136,6 +136,7 @@ h4 {
     margin-top: var(--margin-spacing);
     cursor: pointer;
     transition: var(--transition);
+    user-select: none;
 }
 .btn a {
     color: var(--clr-text-light);
@@ -155,6 +156,9 @@ h4 {
     padding: var(--padding-spacing);
     border: 1px solid var(--clr-primary-7);
     border-radius: var(--border-radius);
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif; */
     font-size: 1rem;
     letter-spacing: calc(var(--spacing) / 2);
     margin-top: var(--margin-spacing);
@@ -180,6 +184,14 @@ a {
 }
 .full-width {
     margin: calc(var(--padding-spacing) * -1);
+}
+.full-height {
+    height: 100%;
+}
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
 }
 
 /* Grid */
@@ -274,6 +286,18 @@ a {
 }
 .pad-2 {
     padding: calc(var(--padding-spacing) * 2);
+}
+.padL {
+    padding-left: var(--padding-spacing);
+}
+.padT {
+    padding-top: var(--padding-spacing);
+}
+.padR {
+    padding-right: var(--padding-spacing);
+}
+.padB {
+    padding-bottom: var(--padding-spacing);
 }
 .title {
     text-align: center;

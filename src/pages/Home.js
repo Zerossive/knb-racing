@@ -85,14 +85,14 @@ export default function Home() {
                 >
                     <Carousel
                         autoPlay={true}
-                        // interval={1000}
                         infiniteLoop={true}
                         dynamicHeight={true}
                         showStatus={false}
                         showThumbs={false}
                         swipeable={true}
                         emulateTouch={true}
-                        transitionTime={1000}
+                        // interval={3000}
+                        // transitionTime={1000}
                     >
                         {images.map((article) => {
                             const { image, description, index } =
@@ -122,7 +122,7 @@ export default function Home() {
             )}
             <div className='grid-container'>
                 {/* Buttons */}
-                {(articles[0] || videos[0]) && (
+                {(articles.length > 1 || videos.length > 2) && (
                     <div className='w12 center-vertical anim-fade'>
                         {/* Show All */}
                         {
