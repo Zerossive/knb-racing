@@ -79,7 +79,7 @@ export default function Contact() {
                 {/* Contact Form */}
                 <div className='w12 pad'>
                     <div className='w12 card pad-2'>
-                        <h3>Contact Us Here</h3>
+                        <h2 className='padB'>Contact Us Here</h2>
                         <form className='w12 flex' onSubmit={sendEmail}>
                             <div className='w4 pad'>
                                 <input
@@ -126,7 +126,7 @@ export default function Contact() {
                             <div className='w4 pad'>
                                 <input
                                     type='submit'
-                                    className='btn w12 full-height'
+                                    className='btn w12'
                                     value='Submit'
                                     onClick={() => setContactNotif("")}
                                 />

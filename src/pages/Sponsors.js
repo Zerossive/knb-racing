@@ -67,7 +67,7 @@ const Sponsors = () => {
                                     dangerouslySetInnerHTML={{ __html: body }}
                                 ></div>
                                 <a href={websiteAddress}>
-                                    <button className='btn w12'>
+                                    <button className='btn w12 marT'>
                                         Visit {sponsorName}
                                     </button>
                                 </a>

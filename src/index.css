@@ -156,9 +156,7 @@ h4 {
     padding: var(--padding-spacing);
     border: 1px solid var(--clr-primary-7);
     border-radius: var(--border-radius);
-    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif; */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     letter-spacing: calc(var(--spacing) / 2);
     /* margin-top: var(--margin-spacing); */
@@ -202,7 +200,7 @@ a {
     margin-top: calc(var(--padding-spacing) * -1);
 
     /* TESTING ANIMATION */
-    animation: var(--duration) growFade;
+    animation: var(--duration) fadeIn;
 }
 .grid-item {
     display: flex;
@@ -281,6 +279,7 @@ a {
 .w12 {
     /* padding: calc(var(--padding-spacing)); */
 }
+/* Padding */
 .pad {
     padding: var(--padding-spacing);
 }
@@ -298,6 +297,25 @@ a {
 }
 .padB {
     padding-bottom: var(--padding-spacing);
+}
+/* Margin */
+.mar {
+    margin: var(--margin-spacing);
+}
+.mar-2 {
+    margin: calc(var(--margin-spacing) * 2);
+}
+.marL {
+    margin-left: var(--margin-spacing);
+}
+.marT {
+    margin-top: var(--margin-spacing);
+}
+.marR {
+    margin-right: var(--margin-spacing);
+}
+.marB {
+    margin-bottom: var(--margin-spacing);
 }
 .title {
     text-align: center;
@@ -411,10 +429,22 @@ span {
 }
 
 /* Animations */
-.anim-fade {
-    animation: var(--duration-long) animFade;
+.anim-grow {
+    animation: var(--duration) grow;
 }
-@keyframes animFade {
+@keyframes grow {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.anim-fade-in {
+    animation: var(--duration) fadeIn;
+    animation-fill-mode: both;
+}
+@keyframes fadeIn {
     0% {
         opacity: 0;
     }
@@ -422,14 +452,26 @@ span {
         opacity: 1;
     }
 }
-.anim-grow {
-    animation: var(--duration) animGrow;
+.anim-fade-out {
+    animation: var(--duration) fadeOut;
+    animation-fill-mode: both;
 }
-@keyframes animGrow {
+@keyframes fadeOut {
     0% {
-        transform: scale(0);
+        opacity: 1;
     }
     100% {
-        transform: scale(1);
+        opacity: 0;
     }
+}
+
+/* Animation Vars */
+.perspective {
+    perspective: 1000px;
+}
+.anim-fast {
+    animation-duration: var(--duration-short);
+}
+.anim-slow {
+    animation-duration: var(--duration-long);
 }
