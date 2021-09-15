@@ -7,7 +7,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 export default function Home() {
-    const generalData = useGlobalContext().generalData;
+    const { generalData } = useGlobalContext();
 
     const [images, setImages] = useState([]);
     const [articles, setArticles] = useState([]);
@@ -73,7 +73,8 @@ export default function Home() {
             style={{
                 backgroundImage: `url(${
                     generalData.backgroundImage &&
-                    generalData.backgroundImage.fields.file.url
+                    generalData.backgroundImage.fields.file.url +
+                        "?w=1920&h=1080&fm=webp"
                 })`,
             }}
         >
@@ -100,7 +101,10 @@ export default function Home() {
                             return (
                                 <div className='' key={index}>
                                     <img
-                                        src={image.fields.file.url}
+                                        src={
+                                            image.fields.file.url +
+                                            "?w=1920&h=1080&fm=webp"
+                                        }
                                         className='grid-img'
                                         alt={description}
                                         style={{
@@ -172,7 +176,7 @@ export default function Home() {
                                 <div
                                     className='w4 bg-img'
                                     style={{
-                                        backgroundImage: `url(${image.fields.file.url})`,
+                                        backgroundImage: `url(${image.fields.file.url}?w=1000&h=500&fm=webp)`,
                                         minHeight: "350px",
                                     }}
                                 />

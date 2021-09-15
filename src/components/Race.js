@@ -11,7 +11,7 @@ const Race = ({ raceData, showImages }) => {
                     <div
                         className='w3 bg-img'
                         style={{
-                            backgroundImage: `url(${image1.fields.file.url})`,
+                            backgroundImage: `url(${image1.fields.file.url}?w=800&h=400&fm=webp)`,
                             minHeight: "250px",
                         }}
                     />
@@ -43,7 +43,7 @@ const Race = ({ raceData, showImages }) => {
                     <div
                         className='w3 bg-img'
                         style={{
-                            backgroundImage: `url(${image2.fields.file.url})`,
+                            backgroundImage: `url(${image2.fields.file.url}?w=800&h=400&fm=webp)`,
                             minHeight: "250px",
                         }}
                     />

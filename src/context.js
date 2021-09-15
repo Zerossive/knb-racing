@@ -5,6 +5,7 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
     const [generalData, setGeneralData] = useState({});
+
     useEffect(() => {
         client
             .getEntries({
@@ -21,13 +22,14 @@ const AppProvider = ({ children }) => {
             behavior: "smooth",
         });
     }, []);
+
     return (
         <AppContext.Provider value={{ generalData }}>
             {children}
         </AppContext.Provider>
     );
 };
-// make sure use
+
 export const useGlobalContext = () => {
     return useContext(AppContext);
 };

@@ -45,7 +45,8 @@ export default function Races() {
             style={{
                 backgroundImage: `url(${
                     generalData.backgroundImage &&
-                    generalData.backgroundImage.fields.file.url
+                    generalData.backgroundImage.fields.file.url +
+                        "?w=1920&h=1080&fm=webp"
                 })`,
             }}
         >

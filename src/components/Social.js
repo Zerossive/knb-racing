@@ -12,7 +12,7 @@ const Social = ({ data }) => {
                 <a className='w3 m3 center-vertical' href={link}>
                     {logo && (
                         <img
-                            src={logo.fields.file.url}
+                            src={logo.fields.file.url + "?w=75&h=75&fm=webp"}
                             alt={name}
                             style={{ width: "75px" }}
                         />

@@ -26,7 +26,10 @@ const Navbar = () => {
                             }}
                         >
                             <img
-                                src={generalData.logoWhite.fields.file.url}
+                                src={
+                                    generalData.logoWhite.fields.file.url +
+                                    "?w=75&h=75&fm=webp"
+                                }
                                 alt={`${generalData.brandName} logo`}
                                 className={CSS.logo}
                             />

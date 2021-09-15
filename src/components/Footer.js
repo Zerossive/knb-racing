@@ -38,7 +38,7 @@ const Footer = () => {
                         <div
                             className='w4 m4 bg-img'
                             style={{
-                                backgroundImage: `url(${generalData.logo.fields.file.url})`,
+                                backgroundImage: `url(${generalData.logo.fields.file.url}?w=75&h=75&fm=webp)`,
                                 backgroundSize: "contain",
                                 backgroundRepeat: "no-repeat",
                             }}
@@ -81,7 +81,10 @@ const Footer = () => {
                         return (
                             <a href={link} key={name}>
                                 <img
-                                    src={logo.fields.file.url}
+                                    src={
+                                        logo.fields.file.url +
+                                        "?w=75&h=75&fm=webp"
+                                    }
                                     alt={name}
                                     className={CSS.socialLogo}
                                 />

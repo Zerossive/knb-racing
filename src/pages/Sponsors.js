@@ -32,7 +32,8 @@ const Sponsors = () => {
             style={{
                 backgroundImage: `url(${
                     generalData.backgroundImage &&
-                    generalData.backgroundImage.fields.file.url
+                    generalData.backgroundImage.fields.file.url +
+                        "?w=1920&h=1080&fm=webp"
                 })`,
             }}
         >
@@ -52,7 +53,10 @@ const Sponsors = () => {
                     return (
                         <div className='grid-item card w12' key={index}>
                             <img
-                                src={logo.fields.file.url}
+                                src={
+                                    logo.fields.file.url +
+                                    "?w=600&h=300&fm=webp"
+                                }
                                 alt={sponsorName}
                                 className='w4'
                                 style={{ objectFit: "contain" }}

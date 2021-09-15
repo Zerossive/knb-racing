@@ -133,7 +133,7 @@ h4 {
     text-transform: capitalize;
     font-size: 1rem;
     letter-spacing: var(--spacing);
-    margin-top: var(--margin-spacing);
+    /* margin-top: var(--margin-spacing); */
     cursor: pointer;
     transition: var(--transition);
     user-select: none;
@@ -161,7 +161,7 @@ h4 {
         "Helvetica Neue", sans-serif; */
     font-size: 1rem;
     letter-spacing: calc(var(--spacing) / 2);
-    margin-top: var(--margin-spacing);
+    /* margin-top: var(--margin-spacing); */
 }
 .hidden {
     display: none;
