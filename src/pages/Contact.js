@@ -6,80 +6,80 @@ import Social from "../components/Social";
 import emailjs from "emailjs-com";
 
 export default function Contact() {
-    const generalData = useGlobalContext().generalData;
+	const generalData = useGlobalContext().generalData;
 
-    const [socials, setSocials] = useState([]);
-    const [contactNotif, setContactNotif] = useState("");
+	const [socials, setSocials] = useState([]);
+	const [contactNotif, setContactNotif] = useState("");
 
-    useEffect(() => {
-        client
-            .getEntries({
-                content_type: "socials",
-            })
-            .then((response) => {
-                let sortedItems = response.items.sort((a, b) => {
-                    return a.fields.index - b.fields.index;
-                });
-                sortedItems.map((item) => {
-                    item.fields.body = documentToHtmlString(item.fields.body);
-                    return item;
-                });
-                setSocials(sortedItems);
-            })
-            .catch(console.error);
-    }, []);
+	useEffect(() => {
+		client
+			.getEntries({
+				content_type: "socials",
+			})
+			.then((response) => {
+				let sortedItems = response.items.sort((a, b) => {
+					return a.fields.index - b.fields.index;
+				});
+				sortedItems.map((item) => {
+					item.fields.body = documentToHtmlString(item.fields.body);
+					return item;
+				});
+				setSocials(sortedItems);
+			})
+			.catch(console.error);
+	}, []);
 
-    const sendEmail = (e) => {
-        e.preventDefault();
+	const sendEmail = (e) => {
+		e.preventDefault();
 
-        emailjs
-            .sendForm(
-                "gmail",
-                "contact_template",
-                e.target,
-                "user_cjRJiYDs4DwXgmCzpIluL"
-            )
-            .then(
-                (result) => {
-                    console.log(result.text);
-                    setContactNotif("Submitted Successfully");
-                },
-                (error) => {
-                    console.log(error.text);
-                }
-            );
+		emailjs
+			.sendForm(
+				"gmail",
+				"contact_template",
+				e.target,
+				"user_cjRJiYDs4DwXgmCzpIluL"
+			)
+			.then(
+				(result) => {
+					console.log(result.text);
+					setContactNotif("Submitted Successfully");
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
 
-        e.target.reset();
-    };
+		e.target.reset();
+	};
 
-    const autoGrow = (e) => {
-        e.target.style.height = "0px";
-        e.target.style.height = e.target.scrollHeight + 2 + "px";
-    };
+	const autoGrow = (e) => {
+		e.target.style.height = "0px";
+		e.target.style.height = e.target.scrollHeight + 2 + "px";
+	};
 
-    return (
-        <main
-            className='bg'
-            style={{
-                backgroundImage: `url(${
-                    generalData.backgroundImage &&
-                    generalData.backgroundImage.fields.file.url +
-                        "?w=1920&h=1080&fm=webp"
-                })`,
-            }}
-        >
-            <div className='grid-container'>
-                {/* Title */}
-                <div className='grid-item w12'>
-                    <div className='w4'></div>
-                    <h1 className='w4 title underline'>Contact Us</h1>
-                    <div className='w4'></div>
-                </div>
+	return (
+		<main
+			className='bg'
+			style={{
+				backgroundImage: `url(${
+					generalData.backgroundImage &&
+					generalData.backgroundImage.fields.file.url +
+						"?w=1920&h=1080&fm=webp"
+				})`,
+			}}
+		>
+			<div className='grid-container'>
+				{/* Title */}
+				<div className='grid-item w12'>
+					<div className='w4'></div>
+					<h1 className='w4 title underline'>Contact Us</h1>
+					<div className='w4'></div>
+				</div>
 
-                {/* Contact Form */}
-                <div className='w12 pad'>
-                    <div className='w12 card pad-2'>
-                        <h2 className='padB'>Contact Us Here</h2>
+				{/* Contact Form */}
+				<div className='w12 pad'>
+					<div className='w12 card pad-2'>
+						{/* <h2 className='padB'>Contact Us Here</h2>
                         <form className='w12 flex' onSubmit={sendEmail}>
                             <div className='w4 pad'>
                                 <input
@@ -144,17 +144,26 @@ export default function Contact() {
                                     </article>
                                 </div>
                             )}
-                        </form>
-                    </div>
-                </div>
+                        </form> */}
+						<article>
+							<h2>Email</h2>
+							<p>
+								Shoot us an email at{" "}
+								<a href='mailto:knbracer@gmail.com'>
+									knbracer@gmail.com
+								</a>
+							</p>
+						</article>
+					</div>
+				</div>
 
-                {/* Socials */}
-                {socials.map((social) => {
-                    return (
-                        <Social data={social.fields} key={social.fields.name} />
-                    );
-                })}
-            </div>
-        </main>
-    );
+				{/* Socials */}
+				{socials.map((social) => {
+					return (
+						<Social data={social.fields} key={social.fields.name} />
+					);
+				})}
+			</div>
+		</main>
+	);
 }
