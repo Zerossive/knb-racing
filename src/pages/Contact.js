@@ -64,8 +64,13 @@ export default function Contact() {
 				backgroundImage: `url(${
 					generalData.backgroundImage &&
 					generalData.backgroundImage.fields.file.url +
-						"?w=1920&h=1080&fm=webp"
+						`?w=#{${window.screen.width}&h=${window.screen.height}&fm=webp`
 				})`,
+				// backgroundImage: `url(${
+				// 	generalData.backgroundImage &&
+				// 	generalData.backgroundImage.fields.file.url +
+				// 		"?w=1920&h=1080&fm=webp"
+				// })`,
 			}}
 		>
 			<div className='grid-container'>
@@ -77,75 +82,80 @@ export default function Contact() {
 				</div>
 
 				{/* Contact Form */}
-				<div className='w12 pad'>
-					<div className='w12 card pad-2'>
-						{/* <h2 className='padB'>Contact Us Here</h2>
-                        <form className='w12 flex' onSubmit={sendEmail}>
-                            <div className='w4 pad'>
-                                <input
-                                    type='text'
-                                    className='search w12'
-                                    placeholder='Name'
-                                    name='name'
-                                    required
-                                />
-                            </div>
-                            <div className='w4 pad'>
-                                <input
-                                    type='text'
-                                    className='search w12'
-                                    placeholder='Email Address'
-                                    name='email'
-                                    required
-                                />
-                            </div>
-                            <div className='w4 pad'>
-                                <input
-                                    type='text'
-                                    className='search w12'
-                                    placeholder='Phone # (optional)'
-                                    name='number'
-                                />
-                            </div>
-                            <div className='w8 pad'>
-                                <textarea
-                                    type='text'
-                                    className='search w12'
-                                    placeholder='Message'
-                                    name='message'
-                                    style={{
-                                        resize: "none",
-                                        minHeight: "100px",
-                                    }}
-                                    onInput={(e) => {
-                                        autoGrow(e);
-                                    }}
-                                    required
-                                />
-                            </div>
-                            <div className='w4 pad'>
-                                <input
-                                    type='submit'
-                                    className='btn w12'
-                                    value='Submit'
-                                    onClick={() => setContactNotif("")}
-                                />
-                            </div>
-                            {contactNotif && (
-                                <div className='w12 pad'>
-                                    <article
-                                        className='card pad center'
-                                        style={{
-                                            background: "var(--clr-green-dark)",
-                                            color: "white",
-                                        }}
-                                    >
-                                        <p>{contactNotif}</p>
-                                    </article>
-                                </div>
-                            )}
-                        </form> */}
-						<article>
+				<div className='w12 grid-item card pad-2'>
+					<h2 className='padB'>Contact Us Here</h2>
+					<form className='w12 flex' onSubmit={sendEmail}>
+						<div className='w4 pad'>
+							<input
+								type='name'
+								className='search w12'
+								placeholder='Name*'
+								name='name'
+								required
+							/>
+						</div>
+						<div className='w4 pad'>
+							<input
+								type='email'
+								className='search w12'
+								placeholder='Email Address*'
+								name='email'
+								required
+							/>
+						</div>
+						<div className='w4 pad'>
+							<input
+								type='tel'
+								className='search w12'
+								placeholder='Phone #'
+								name='phone'
+							/>
+						</div>
+						<div className='w8 pad'>
+							<textarea
+								type='text'
+								className='search w12'
+								placeholder='Message*'
+								name='message'
+								style={{
+									resize: "none",
+									minHeight: "100px",
+								}}
+								onInput={(e) => {
+									autoGrow(e);
+								}}
+								required
+							/>
+						</div>
+						<div className='w4 pad'>
+							<input
+								type='submit'
+								className='btn w12'
+								value='Submit'
+								onClick={() => setContactNotif("")}
+							/>
+						</div>
+						{contactNotif && (
+							<div className='w12 pad'>
+								<article
+									className='card pad center'
+									style={{
+										background: "var(--clr-green-dark)",
+										color: "white",
+									}}
+								>
+									<p>{contactNotif}</p>
+								</article>
+							</div>
+						)}
+						<p>
+							Or shoot us an email at{" "}
+							<a href='mailto:knbracer@gmail.com'>
+								knbracer@gmail.com
+							</a>
+						</p>
+					</form>
+					{/* <article>
 							<h2>Email</h2>
 							<p>
 								Shoot us an email at{" "}
@@ -153,8 +163,7 @@ export default function Contact() {
 									knbracer@gmail.com
 								</a>
 							</p>
-						</article>
-					</div>
+						</article> */}
 				</div>
 
 				{/* Socials */}
