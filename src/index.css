@@ -137,6 +137,8 @@ h4 {
 	cursor: pointer;
 	transition: var(--transition);
 	user-select: none;
+	/* TESTING */
+	-webkit-tap-highlight-color: transparent;
 }
 .btn a {
 	color: var(--clr-text-light);

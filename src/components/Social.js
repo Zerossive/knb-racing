@@ -3,7 +3,7 @@ import React from "react";
 const Social = ({ data }) => {
 	const { name, body, logo, link } = data;
 	return (
-		<div className='w4 pad' style={{ minWidth: "300px" }}>
+		<div className='w4 pad' style={{ minWidth: "280px" }}>
 			<div className='card w12 pad'>
 				<article className={`${!logo ? "w12" : "w9 m9"} pad`}>
 					<h2 className='padB'>{name}</h2>

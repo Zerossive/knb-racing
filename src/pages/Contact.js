@@ -83,7 +83,7 @@ export default function Contact() {
 
 				{/* Contact Form */}
 				<div className='w12 grid-item card pad-2'>
-					<h2 className='padB'>Contact Us Here</h2>
+					{/* <h2 className='padB'>Contact Us Here</h2> */}
 					<form className='w12 flex' onSubmit={sendEmail}>
 						<div className='w4 pad'>
 							<input
