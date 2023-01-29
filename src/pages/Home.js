@@ -74,7 +74,7 @@ export default function Home() {
 				backgroundImage: `url(${
 					generalData.backgroundImage &&
 					generalData.backgroundImage.fields.file.url +
-						`?w=#{${window.screen.width}&h=${window.screen.height}&fm=webp`
+						`?w={${window.screen.width}&h=${window.screen.height}&fm=webp`
 				})`,
 				// backgroundImage: `url(${
 				// 	generalData.backgroundImage &&
@@ -108,7 +108,7 @@ export default function Home() {
 									<img
 										src={
 											image.fields.file.url +
-											`?w=#{${
+											`?w={${
 												window.screen.width
 											}&h=${Math.round(
 												window.screen.height / 2

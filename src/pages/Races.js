@@ -46,7 +46,7 @@ export default function Races() {
 				backgroundImage: `url(${
 					generalData.backgroundImage &&
 					generalData.backgroundImage.fields.file.url +
-						`?w=#{${window.screen.width}&h=${window.screen.height}&fm=webp`
+						`?w={${window.screen.width}&h=${window.screen.height}&fm=webp`
 				})`,
 				// backgroundImage: `url(${
 				// 	generalData.backgroundImage &&
