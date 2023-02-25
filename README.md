@@ -1,4 +1,8 @@
+<img src="https://knbracing.com/favicon.ico">
+
 # KNB Racing
 
-This project is used help promote Kaylee Boyce with her racing career, and further teach myself about developing these kinds of websites.
-[Visit KNB Racing](https://knbracing.netlify.app/).
+This website was designed to showcase the racing information of Kaylee Boyce in order to help promote her racing career, and provide an organized archive of her overall progress.
+
+Learn more by checking out my [portfolio](https://dannyharris.info/projects/KNB%20Racing), or trying it out at [knbracing.com](https://knbracing.com/)!
+
