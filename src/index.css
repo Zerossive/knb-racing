@@ -64,6 +64,7 @@ body {
 		"Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	font-display: swap;
 
 	background-color: var(--clr-white);
 	line-height: 1.5;
@@ -84,6 +85,7 @@ h1,
 h2,
 h3,
 h4 {
+	font-family: "Racing Sans One";
 	letter-spacing: var(--spacing);
 	text-transform: capitalize;
 	color: var(--clr-text-dark);
@@ -133,11 +135,9 @@ h4 {
 	text-transform: capitalize;
 	font-size: 1rem;
 	letter-spacing: var(--spacing);
-	/* margin-top: var(--margin-spacing); */
 	cursor: pointer;
-	transition: var(--transition);
+	transition: var(--transition-fast);
 	user-select: none;
-	/* TESTING */
 	-webkit-tap-highlight-color: transparent;
 }
 .btn a {
@@ -161,7 +161,6 @@ h4 {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 	font-size: 1rem;
 	letter-spacing: calc(var(--spacing) / 2);
-	/* margin-top: var(--margin-spacing); */
 }
 .hidden {
 	display: none;
@@ -200,8 +199,6 @@ a {
 	flex-flow: row wrap;
 	align-items: flex-start;
 	margin-top: calc(var(--padding-spacing) * -1);
-
-	/* TESTING ANIMATION */
 	animation: var(--duration) fadeIn;
 }
 .grid-item {
@@ -403,9 +400,7 @@ span {
 	flex-wrap: wrap;
 	overflow: hidden;
 	line-height: 2em;
-
-	/* TESTING ANIMATION */
-	animation: var(--duration-long) growFade;
+	animation: var(--duration) growFade;
 }
 @keyframes growFade {
 	0% {

@@ -1,36 +1,69 @@
-import React, { useEffect, useState } from "react";
-import { client } from "../client";
+import React, { useState } from "react";
 import { useGlobalContext } from "../context";
-import Race from "../components/Race";
+import VideoEmbed from "../components/VideoEmbed";
 
 export default function Races() {
 	const generalData = useGlobalContext().generalData;
 
-	const [races, setRaces] = useState([]);
-	const [filteredRaces, setFilteredRaces] = useState([]);
-	const [showImages, setShowImages] = useState(true);
-
-	useEffect(() => {
-		client
-			.getEntries({
-				content_type: "races",
-			})
-			.then((response) => {
-				const sortedItems = response.items.sort((a, b) => {
-					return a.fields.index - b.fields.index;
-				});
-				setRaces(sortedItems);
-				setFilteredRaces(sortedItems);
-			})
-			.catch(console.error);
-	}, []);
+	const [videos, setVideos] = useState([
+		{
+			title: "2023-07-29",
+			videoUrl: "https://www.youtube.com/watch?v=Z5TDP-eRyA4",
+			description: "",
+		},
+		{
+			title: "2023-07-15 Spinouts",
+			videoUrl: "https://www.youtube.com/watch?v=AYu1D1y4egk",
+			description: "",
+		},
+		{
+			title: "2023-07-01 Spinout",
+			videoUrl: "https://www.youtube.com/watch?v=2M1VNomQIGw",
+			description: "",
+		},
+		{
+			title: "2023-06-17",
+			videoUrl: "https://www.youtube.com/watch?v=1PZ1reB5MfY",
+			description: "",
+		},
+		{
+			title: "2023-05-27",
+			videoUrl: "https://www.youtube.com/watch?v=73kBrFyNo1E",
+			description: "",
+		},
+		{
+			title: "2023-04-15 Crash into Tire",
+			videoUrl: "https://www.youtube.com/watch?v=Si3pDlXvR24",
+			description: "",
+		},
+		{
+			title: "2023-04-01 Crash into Flip",
+			videoUrl: "https://www.youtube.com/watch?v=eb4YQ_8bZEE",
+			description: "",
+		},
+		{
+			title: "2023-03-18",
+			videoUrl: "https://www.youtube.com/watch?v=gA5qkUT3YFw",
+			description: "",
+		},
+		{
+			title: "2022-08-26 Crash",
+			videoUrl: "https://www.youtube.com/watch?v=u0aE3rCkdJE",
+			description: "",
+		},
+		{
+			title: "2022-05-17",
+			videoUrl: "https://www.youtube.com/watch?v=CyYRgRvveAk&t=8s",
+			description: "",
+		},
+	]);
+	const [filteredRaces, setFilteredRaces] = useState([...videos]);
 
 	const searchRaces = (e) => {
-		const newRaceList = races.filter((race) => {
+		const newRaceList = videos.filter((video) => {
 			if (
-				race.fields.trackName.toUpperCase().includes(e.toUpperCase()) ||
-				race.fields.location.toUpperCase().includes(e.toUpperCase()) ||
-				race.fields.date.toUpperCase().includes(e.toUpperCase())
+				video.title.toUpperCase().includes(e.toUpperCase()) ||
+				video.description.toUpperCase().includes(e.toUpperCase())
 			) {
 				return 1;
 			}
@@ -48,18 +81,10 @@ export default function Races() {
 					generalData.backgroundImage.fields.file.url +
 						`?w=${window.screen.width}&h=${window.screen.height}&fm=webp`
 				})`,
-				// backgroundImage: `url(${
-				// 	generalData.backgroundImage &&
-				// 	generalData.backgroundImage.fields.file.url +
-				// 		"?w=1920&h=1080&fm=webp"
-				// })`,
 			}}
 		>
-			{/* Races v2 */}
-			<div
-				className='grid-container'
-				style={{ justifyContent: "center" }}
-			>
+			{/* Races */}
+			<div className='grid-container padB'>
 				{/* Title */}
 				<div className='grid-item w12'>
 					<div className='w4'></div>
@@ -68,17 +93,8 @@ export default function Races() {
 				</div>
 
 				{/* Buttons */}
-				{races[0] && (
+				{videos[0] && (
 					<div className='w12 center-vertical anim-fade'>
-						{/* Show/Hide Images */}
-						<div className='pad m12 center'>
-							<button
-								className='btn'
-								onClick={() => setShowImages(!showImages)}
-							>
-								{showImages ? "hide images" : "show images"}
-							</button>
-						</div>
 						{/* Search */}
 						<div className='pad m12 center'>
 							<input
@@ -90,19 +106,28 @@ export default function Races() {
 								}}
 							/>
 						</div>
+
+						{/* YouTube Link */}
+						<div className='pad m12 center'>
+							<button className='btn'>KNB Racing YouTube</button>
+						</div>
 					</div>
 				)}
 
-				{/* Races (CMS) */}
-				{filteredRaces.map((race) => {
-					return (
-						<Race
-							raceData={race.fields}
-							showImages={showImages}
-							key={race.fields.date}
-						/>
-					);
-				})}
+				{/* Races */}
+				<div className='w12 flex'>
+					{filteredRaces.map(({ title, videoUrl, description }) => {
+						return (
+							<div className='w4 pad' key={videoUrl}>
+								<VideoEmbed
+									title={title}
+									videoUrl={videoUrl}
+									description={description}
+								/>
+							</div>
+						);
+					})}
+				</div>
 			</div>
 		</main>
 	);

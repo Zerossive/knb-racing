@@ -2,9 +2,9 @@ import { React, useState, useEffect } from "react";
 import { client } from "../client";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { useGlobalContext } from "../context";
-import ReactPlayer from "react-player";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import VideoEmbed from "../components/VideoEmbed";
 
 export default function Home() {
 	const { generalData } = useGlobalContext();
@@ -12,8 +12,6 @@ export default function Home() {
 	const [images, setImages] = useState([]);
 	const [articles, setArticles] = useState([]);
 	const [videos, setVideos] = useState([]);
-	const [showArticles, setShowArticles] = useState(true);
-	const [showVideos, setShowVideos] = useState(true);
 
 	useEffect(() => {
 		// Get carousel data
@@ -29,6 +27,7 @@ export default function Home() {
 				setImages(sortedItems);
 			})
 			.catch(console.error);
+
 		// Get articles
 		client
 			.getEntries({
@@ -46,6 +45,7 @@ export default function Home() {
 				setArticles(sortedItems);
 			})
 			.catch(console.error);
+
 		// Get videos
 		client
 			.getEntries({
@@ -76,11 +76,6 @@ export default function Home() {
 					generalData.backgroundImage.fields.file.url +
 						`?w=${window.screen.width}&h=${window.screen.height}&fm=webp`
 				})`,
-				// backgroundImage: `url(${
-				// 	generalData.backgroundImage &&
-				// 	generalData.backgroundImage.fields.file.url +
-				// 		"?w=1920&h=1080&fm=webp"
-				// })`,
 			}}
 		>
 			{/* Carousel */}
@@ -101,10 +96,12 @@ export default function Home() {
 						// transitionTime={1000}
 					>
 						{images.map((article) => {
-							const { image, description, index } =
-								article.fields;
+							const { image, description } = article.fields;
 							return (
-								<div className='' key={index}>
+								<div
+									style={{ background: "black" }}
+									key={image}
+								>
 									<img
 										src={
 											image.fields.file.url +
@@ -114,10 +111,6 @@ export default function Home() {
 												window.screen.height / 2
 											)}&fm=webp`
 										}
-										// src={
-										// 	image.fields.file.url +
-										// 	"?w=1080&h=720&fm=webp"
-										// }
 										className='grid-img'
 										alt={description}
 										style={{
@@ -137,135 +130,66 @@ export default function Home() {
 					</Carousel>
 				</div>
 			)}
-			<div className='grid-container marT'>
-				{/* Buttons */}
-				{(articles.length > 1 || videos.length > 2) && (
-					<div className='w12 center-vertical anim-fade'>
-						{/* Show All */}
-						{
-							<div className='pad m12 center'>
-								<button
-									className='btn'
-									onClick={() => {
-										setShowArticles(true);
-										setShowVideos(true);
-									}}
-								>
-									show all
-								</button>
-							</div>
-						}
-						{/* Show Articles */}
-						<div className='pad m12 center'>
-							<button
-								className='btn'
-								onClick={() => setShowArticles(!showArticles)}
-							>
-								{showArticles
-									? "hide articles"
-									: "show articles"}
-							</button>
-						</div>
-						{/* Show Videos */}
-						<div className='pad m12 center'>
-							<button
-								className='btn'
-								onClick={() => setShowVideos(!showVideos)}
-							>
-								{showVideos ? "hide videos" : "show videos"}
-							</button>
-						</div>
-					</div>
-				)}
 
+			<div className='grid-container pad'>
 				{/* Articles */}
-				{showArticles &&
-					articles.map((article) => {
-						const { image, title, body, index } = article.fields;
+				{articles.map((article) => {
+					const { image, title, body } = article.fields;
+
+					return (
+						<div className='grid-item card w12' key={body}>
+							{/* Image */}
+							<div
+								className='w4 bg-img'
+								style={{
+									backgroundImage: `url(${
+										image.fields.file.url
+									}?w=${window.screen.width}&h=${Math.round(
+										window.screen.height / 2
+									)}&fm=webp)`,
+									// backgroundImage: `url(${image.fields.file.url}?w=1000&h=500&fm=webp)`,
+									minHeight: "350px",
+								}}
+							/>
+
+							{/* Body */}
+							<article className='w8 pad-2 center-vertical'>
+								<h2
+									className='w12'
+									style={{ textAlign: "justify" }}
+								>
+									{title}
+								</h2>
+								<p
+									className='w12'
+									style={{
+										fontSize: "1.1rem",
+										lineHeight: "2.2rem",
+									}}
+									dangerouslySetInnerHTML={{
+										__html: body,
+									}}
+								></p>
+							</article>
+						</div>
+					);
+				})}
+
+				<div className='w12 flex'>
+					{/* Videos */}
+					{videos.map((video) => {
+						const { title, videoUrl, description } = video.fields;
 
 						return (
-							<div className='grid-item card w12' key={index}>
-								{/* Image */}
-								<div
-									className='w4 bg-img'
-									style={{
-										backgroundImage: `url(${
-											image.fields.file.url
-										}?w=${
-											window.screen.width
-										}&h=${Math.round(
-											window.screen.height / 2
-										)}&fm=webp)`,
-										// backgroundImage: `url(${image.fields.file.url}?w=1000&h=500&fm=webp)`,
-										minHeight: "350px",
-									}}
+							<div className='w4 pad' key={videoUrl}>
+								<VideoEmbed
+									title={title}
+									videoUrl={videoUrl}
+									description={description}
 								/>
-								{/* Body */}
-								<article className='w8 pad-2 center-vertical'>
-									<h2
-										className='w12'
-										style={{ textAlign: "justify" }}
-									>
-										{title}
-									</h2>
-									<p
-										className='w12'
-										style={{
-											fontSize: "1.1rem",
-											lineHeight: "2.2rem",
-										}}
-										dangerouslySetInnerHTML={{
-											__html: body,
-										}}
-									></p>
-								</article>
 							</div>
 						);
 					})}
-
-				<div className='w12 grid-item center-vertical'>
-					{/* Videos */}
-					{showVideos &&
-						videos.map((video) => {
-							const { title, videoUrl, description, index } =
-								video.fields;
-
-							return (
-								<div className='w6 pad' key={index}>
-									<div className='w12 card'>
-										{/* Title */}
-										{title && (
-											<h2 className='w12 title'>
-												{title}
-											</h2>
-										)}
-										{/* Video */}
-										<ReactPlayer
-											url={videoUrl}
-											controls={true}
-											light={true}
-											playing={true}
-											width='100%'
-											height='auto'
-											style={{
-												aspectRatio: "16/9",
-												minHeight: "200px",
-											}}
-										/>
-										{/* Description */}
-										{description && (
-											<article className='w12 pad'>
-												<p
-													dangerouslySetInnerHTML={{
-														__html: description,
-													}}
-												></p>
-											</article>
-										)}
-									</div>
-								</div>
-							);
-						})}
 				</div>
 			</div>
 		</main>
