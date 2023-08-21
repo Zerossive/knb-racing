@@ -7,6 +7,21 @@ export default function Races() {
 
 	const [videos, setVideos] = useState([
 		{
+			title: "2023-08-19 Crash",
+			videoUrl: "https://www.youtube.com/watch?v=crb-Z5NgPZs",
+			description: "",
+		},
+		{
+			title: "2023-08-12 Fire",
+			videoUrl: "https://www.youtube.com/watch?v=Z3s-qmgXnFc",
+			description: "",
+		},
+		{
+			title: "2023-08-06",
+			videoUrl: "https://www.youtube.com/watch?v=yv0sCNqFt9I",
+			description: "",
+		},
+		{
 			title: "2023-07-29",
 			videoUrl: "https://www.youtube.com/watch?v=Z5TDP-eRyA4",
 			description: "",
