@@ -11,7 +11,7 @@ export default defineConfig({
 			manifest: {
 				name: 'KNB Racing',
 				short_name: 'KNB Racing',
-				theme_color: '#1f1e23',
+				theme_color: '#581c87',
 				background_color: '#1f1e23',
 				description:
 					'Learn more about Kaylee Boyce, an up-and-coming dirt track race car driver from Texas',
