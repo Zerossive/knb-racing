@@ -6,7 +6,7 @@ import Article from '../../components/Article'
 
 const HomePage = () => {
 	return (
-		<main className='w-screen bg-overlay'>
+		<main className='w-full bg-overlay'>
 			{/* Home CTA */}
 			<CallToAction />
 

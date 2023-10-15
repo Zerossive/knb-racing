@@ -26,7 +26,7 @@ const ContactPage = () => {
 		)
 	}
 	return (
-		<main className='w-screen bg-overlay'>
+		<main className='w-full bg-overlay'>
 			{/* Title */}
 			<div className='prose px-12 py-6 text-dark lg:p-24'>
 				<h1>Contact Us</h1>
@@ -39,7 +39,7 @@ const ContactPage = () => {
 			<Section>
 				<VisibleWrapper className='mx-auto flex flex-col gap-6 px-6'>
 					<form
-						className='rounded-custom flex w-full flex-wrap gap-6 bg-overlay p-6 text-dark'
+						className='flex w-full flex-wrap gap-6 rounded-custom bg-overlay p-6 text-dark'
 						onSubmit={handleSubmit}
 					>
 						<div className='grow'>
@@ -48,7 +48,7 @@ const ContactPage = () => {
 								type='text'
 								id='name'
 								name='name'
-								className='rounded-custom w-full bg-surface bg-opacity-10 p-2'
+								className='w-full rounded-custom bg-surface bg-opacity-10 p-2'
 							/>
 						</div>
 						<div className='grow'>
@@ -57,7 +57,7 @@ const ContactPage = () => {
 								type='tel'
 								id='phone'
 								name='phone'
-								className='rounded-custom w-full bg-surface bg-opacity-10 p-2'
+								className='w-full rounded-custom bg-surface bg-opacity-10 p-2'
 							/>
 						</div>
 						<div className='w-full'>
@@ -66,7 +66,7 @@ const ContactPage = () => {
 								type='email'
 								id='email'
 								name='email'
-								className='rounded-custom w-full bg-surface bg-opacity-10 p-2'
+								className='w-full rounded-custom bg-surface bg-opacity-10 p-2'
 								required
 							/>
 						</div>
@@ -76,7 +76,7 @@ const ContactPage = () => {
 								type='text'
 								id='message'
 								name='message'
-								className='rounded-custom h-40 w-full bg-surface bg-opacity-10 p-2'
+								className='h-40 w-full rounded-custom bg-surface bg-opacity-10 p-2'
 								required
 							/>
 						</div>

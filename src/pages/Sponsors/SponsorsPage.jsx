@@ -17,7 +17,7 @@ const SponsorsPage = () => {
 	]
 
 	return (
-		<main className='w-screen bg-overlay'>
+		<main className='w-full bg-overlay'>
 			{/* Title */}
 			<div className='prose px-12 py-6 text-dark lg:p-24'>
 				<h1>Our Sponsors</h1>

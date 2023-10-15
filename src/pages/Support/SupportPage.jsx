@@ -7,7 +7,7 @@ import VisibleWrapper from '../../components/VisibleWrapper'
 
 const SupportPage = () => {
 	return (
-		<main className='w-screen bg-overlay'>
+		<main className='w-full bg-overlay'>
 			{/* Title */}
 			<div className='prose px-12 py-6 text-dark lg:p-24'>
 				<h1>Support</h1>
@@ -23,7 +23,7 @@ const SupportPage = () => {
 						<iframe
 							id='kofiframe'
 							src='https://ko-fi.com/knbracing/?hidefeed=true&widget=true&embed=true&preview=true'
-							className='rounded-custom h-[712px] w-min animate-pulse bg-surface'
+							className='h-[712px] w-min animate-pulse rounded-custom bg-surface'
 							title='knbracing'
 							onLoad={(e) => {
 								e.target.classList.remove('animate-pulse')
