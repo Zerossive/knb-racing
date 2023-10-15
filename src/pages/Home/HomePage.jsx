@@ -34,8 +34,11 @@ const HomePage = () => {
 						<img
 							src='https://images.ctfassets.net/fx0qfimg9jd6/6eYMgjhTB2wewuZCJGCgkx/f0f244b172577210f10150a2425c2785/may_8_1.jpg?w=1920&h=540&fm=webp'
 							alt='article image'
-							className='rounded-custom w-full border-2 border-light'
+							className='w-full rounded-custom border-2 border-light'
 							loading='lazy'
+							onLoad={(e) => {
+								e.target.classList.add('animate-fade-in')
+							}}
 						/>
 						<figcaption>Kaylee posing with her first trophy</figcaption>
 					</figure>
@@ -65,8 +68,11 @@ const HomePage = () => {
 						<img
 							src='https://images.ctfassets.net/fx0qfimg9jd6/7ktKBDxR0hU2v8WFpkWknn/c2d7f388c47ddb1b93662422e12e2547/Racing_Photo.jpg?w=1920&h=540&fm=webp'
 							alt='article image'
-							className='rounded-custom w-full border-2 border-light'
+							className='w-full rounded-custom border-2 border-light'
 							loading='lazy'
+							onLoad={(e) => {
+								e.target.classList.add('animate-fade-in')
+							}}
 						/>
 						<figcaption>Kaylee during a race</figcaption>
 					</figure>

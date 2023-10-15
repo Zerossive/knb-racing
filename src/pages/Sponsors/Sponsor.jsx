@@ -10,22 +10,27 @@ const Sponsor = ({ sponsor }) => {
 			{({ isVisible }) => (
 				<section
 					className={twMerge([
-						'mx-auto flex scale-95 flex-wrap items-center justify-center gap-6 px-6 opacity-0 duration-500 ease-in-out',
+						'mx-auto flex scale-95 flex-wrap items-start justify-center gap-6 px-6 opacity-0 duration-500 ease-in-out',
 						isVisible && 'scale-100 opacity-100',
 					])}
 				>
 					<img
 						src={image}
 						alt='article image'
-						className='rounded-custom w-full border-2 border-light bg-overlay md:w-3/4 lg:w-1/2 xl:w-1/3'
+						className='w-full rounded-custom border-2 border-light bg-overlay md:w-3/4 lg:w-1/2 xl:w-1/3'
 						loading='lazy'
+						onLoad={(e) => {
+							e.target.classList.add('animate-fade-in')
+						}}
 					/>
 					<section className='prose prose-invert flex grow flex-col lg:prose-xl'>
 						<h2 className='!mt-0'>{title}</h2>
 						<p className=''>{description}</p>
-						<Button fullWidth cta onClick={() => window.open(url)}>
-							Visit {title}
-						</Button>
+						<a href={url}>
+							<Button fullWidth cta>
+								Visit {title}
+							</Button>
+						</a>
 					</section>
 				</section>
 			)}

@@ -8,7 +8,7 @@ export default {
 		extend: {
 			colors: {
 				primary: colors.purple['900'],
-				secondary: colors.purple['400'],
+				secondary: '#00d8e8',
 				dark: colors.zinc['900'],
 				light: colors.zinc['50'],
 				overlay: colors.zinc['50'],
@@ -24,6 +24,28 @@ export default {
 			},
 			borderRadius: {
 				custom: '.2rem',
+			},
+			animation: {
+				'fade-in': 'fade-in .5s ease-in-out',
+				'fade-out': 'fade-out .5s ease-in-out',
+			},
+			keyframes: {
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+					},
+					'100%': {
+						opacity: '1',
+					},
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1',
+					},
+					'100%': {
+						opacity: '0',
+					},
+				},
 			},
 		},
 	},

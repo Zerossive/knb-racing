@@ -7,23 +7,26 @@ const Section = (props) => {
 
 	return (
 		<section
-			className={twMerge(['bg-base group relative z-10 overflow-hidden py-12', className])}
+			className={twMerge(['group relative z-10 overflow-hidden bg-base py-12', className])}
 		>
 			{/* Background */}
 			<img
 				src={track}
 				className='absolute left-0 top-1/2 -z-10 h-full w-full -translate-y-1/2 bg-transparent object-cover object-bottom group-even:hidden'
 				loading='lazy'
+				onLoad={(e) => {
+					e.target.classList.add('animate-fade-in')
+				}}
 			/>
 
 			{/* Fade Top */}
-			<div className='from-base absolute top-0 -z-10 h-1/4 w-full bg-gradient-to-b to-transparent'></div>
+			<div className='absolute top-0 -z-10 h-1/4 w-full bg-gradient-to-b from-base to-transparent'></div>
 
 			{/* Child Elements */}
 			<div className='flex flex-col gap-24'>{children}</div>
 
 			{/* Fade Bottom */}
-			<div className='from-base absolute bottom-0 -z-10 h-1/4 w-full bg-gradient-to-t to-transparent'></div>
+			<div className='absolute bottom-0 -z-10 h-1/4 w-full bg-gradient-to-t from-base to-transparent'></div>
 		</section>
 	)
 }
