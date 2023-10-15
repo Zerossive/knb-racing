@@ -10,6 +10,24 @@ import ContactPage from './pages/Contact/ContactPage'
 import RacesPage from './pages/Races/RacesPage'
 import SponsorsPage from './pages/Sponsors/SponsorsPage'
 import SupportPage from './pages/Support/SupportPage'
+import { registerSW } from 'virtual:pwa-register'
+
+// Check for service worker status
+registerSW({
+	immediate: true,
+	onRegisterError(error) {
+		console.log('Service Worker registration failed:', error)
+	},
+	onNeedRefresh() {
+		console.log('App needs to refresh')
+	},
+	onOfflineReady() {
+		console.log('App is ready to work offline')
+	},
+	onRegistered() {
+		console.log('Service Worker has been registered.')
+	},
+})
 
 const router = createBrowserRouter([
 	{

@@ -4,7 +4,7 @@ import Socials from './Socials'
 
 const Footer = () => {
 	return (
-		<footer className='flex flex-col justify-between gap-3 overflow-auto bg-crust p-6 lg:flex-row'>
+		<footer className='flex flex-col items-center justify-between gap-3 overflow-auto bg-crust p-6 lg:flex-row'>
 			Copyright © 2023 Kaylee Boyce
 			{/* TESTING */}
 			{/* <section className='m-3 bg-light p-12 text-dark'>
