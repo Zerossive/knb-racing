@@ -31,21 +31,21 @@ const Socials = (props) => {
 	return (
 		<div className={twMerge(['flex flex-wrap gap-3', className])}>
 			{socials.map((social) => (
-				<a
-					key={social.name}
-					href={social.url}
-					aria-label={social.name}
+				<Button
+					transparent
 					className={twMerge([
-						'flex flex-col gap-3',
-						block &&
-							'rounded-custom flex-row items-center bg-overlay px-6 py-3 text-dark',
+						'p-0 text-secondary',
+						block && 'rounded-custom bg-overlay px-6 py-3',
 					])}
+					onClick={() => {
+						window.location = social.url
+					}}
+					key={social.name}
 				>
-					{showLabels && social.name}
-					<Button transparent className='p-0 text-secondary'>
-						{social.logo}
-					</Button>
-				</a>
+					{showLabels && <span className='text-dark'>{social.name}</span>}
+					{!showLabels && <span className='sr-only'>{social.name}</span>}
+					{social.logo}
+				</Button>
 			))}
 		</div>
 	)

@@ -1,14 +1,17 @@
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 function Root() {
-	const scrollUp = () => {
+	const navigate = useNavigate()
+
+	const handleTitleClick = () => {
+		navigate('/')
 		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}
 	return (
 		<>
-			<Navbar title='KNB Racing' titleClick={scrollUp} />
+			<Navbar title='KNB Racing' titleClick={handleTitleClick} />
 			<div className='min-h-screen'>
 				<Outlet />
 			</div>

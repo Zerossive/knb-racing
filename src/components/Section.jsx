@@ -13,6 +13,7 @@ const Section = (props) => {
 			<img
 				src={track}
 				className='absolute left-0 top-1/2 -z-10 h-full w-full -translate-y-1/2 bg-transparent object-cover object-bottom group-even:hidden'
+				alt='track background'
 				loading='lazy'
 				onLoad={(e) => {
 					e.target.classList.add('animate-fade-in')

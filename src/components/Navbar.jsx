@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 import Button from './Button'
-import { NavLink, useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const Navbar = (props) => {
 	const {
@@ -28,9 +28,11 @@ const Navbar = (props) => {
 	]
 
 	const location = useLocation()
+	const navigate = useNavigate()
 
-	const handleLinkClick = () => {
+	const handleLinkClick = (url) => {
 		setShowLinks(false)
+		navigate(url)
 		window.scrollTo({ top: 0 })
 	}
 
@@ -55,14 +57,17 @@ const Navbar = (props) => {
 				])}
 			>
 				{/* Title and Logo */}
-				<h1
+				<Button
 					className={twMerge([
 						'flex grow items-center justify-center gap-3 text-2xl md:text-3xl lg:text-4xl',
 						leftAlign && 'justify-start',
 						titleClick && 'cursor-pointer',
 						linksLeft && 'md:order-first md:grow-0',
+						'p-0 font-title text-light',
 					])}
 					onClick={titleClick}
+					transparent
+					raise={false}
 				>
 					KNB
 					<div
@@ -72,7 +77,7 @@ const Navbar = (props) => {
 						<img src='/logo.svg' className='ml-auto h-full' alt='logo' />
 					</div>
 					Racing
-				</h1>
+				</Button>
 
 				{/* Menu Button */}
 				<svg
@@ -109,21 +114,19 @@ const Navbar = (props) => {
 							transparent && 'bg-transparent',
 						])}
 					>
-						<NavLink to={link.url}>
-							<Button
-								fullWidth
-								underline
-								className={twMerge([
-									'font-extrabold text-light',
-									leftAlign && 'px-3t justify-start border-transparent',
-									location.pathname === link.url && 'text-secondary',
-								])}
-								transparent
-								onClick={handleLinkClick}
-							>
-								{link.title}
-							</Button>
-						</NavLink>
+						<Button
+							fullWidth
+							underline
+							className={twMerge([
+								'font-extrabold text-light',
+								leftAlign && 'px-3t justify-start border-transparent',
+								location.pathname === link.url && 'text-secondary',
+							])}
+							transparent
+							onClick={() => handleLinkClick(link.url)}
+						>
+							{link.title}
+						</Button>
 					</li>
 				))}
 			</ul>

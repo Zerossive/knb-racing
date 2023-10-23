@@ -26,11 +26,9 @@ const Sponsor = ({ sponsor }) => {
 					<section className='prose prose-invert flex grow flex-col lg:prose-xl'>
 						<h2 className='!mt-0'>{title}</h2>
 						<p className=''>{description}</p>
-						<a href={url}>
-							<Button fullWidth cta>
-								Visit {title}
-							</Button>
-						</a>
+						<Button fullWidth cta onClick={() => (window.location = url)}>
+							Visit {title}
+						</Button>
 					</section>
 				</section>
 			)}

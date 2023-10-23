@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRouteError } from 'react-router-dom'
+import Button from '../../components/Button'
 
 const ErrorPage = () => {
 	const error = useRouteError()
@@ -12,6 +13,9 @@ const ErrorPage = () => {
 			<p>
 				<i>{error.statusText || error.message}</i>
 			</p>
+			<a href='/'>
+				<Button cta>Go Home</Button>
+			</a>
 		</div>
 	)
 }
