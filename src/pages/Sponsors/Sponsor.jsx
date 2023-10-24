@@ -2,6 +2,7 @@ import React from 'react'
 import VisibilitySensor from 'react-visibility-sensor'
 import { twMerge } from 'tailwind-merge'
 import Button from '../../components/Button'
+import { FaInfoCircle } from 'react-icons/fa'
 
 const Sponsor = ({ sponsor }) => {
 	const { url, title, description, image } = sponsor
@@ -26,7 +27,8 @@ const Sponsor = ({ sponsor }) => {
 					<section className='prose prose-invert flex grow flex-col lg:prose-xl'>
 						<h2 className='!mt-0'>{title}</h2>
 						<p className=''>{description}</p>
-						<Button fullWidth cta onClick={() => (window.location = url)}>
+						<Button fullWidth cta href={url}>
+							<FaInfoCircle />
 							Visit {title}
 						</Button>
 					</section>

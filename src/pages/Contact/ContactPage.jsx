@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from '../../components/Button'
 import Section from '../../components/Section'
 import Article from '../../components/Article'
@@ -6,7 +6,7 @@ import Transition from '../../components/Transition'
 import VisibleWrapper from '../../components/VisibleWrapper'
 import Socials from '../../components/Socials'
 import emailjs from '@emailjs/browser'
-import { FaTimes, FaCheck } from 'react-icons/fa'
+import { FaTimes, FaCheck, FaPaperPlane } from 'react-icons/fa'
 
 const ContactPage = () => {
 	const [contactStatus, setContactStatus] = useState('')
@@ -25,6 +25,11 @@ const ContactPage = () => {
 			},
 		)
 	}
+
+	useEffect(() => {
+		document.title = 'Contact - KNB Racing'
+	}, [])
+
 	return (
 		<main className='w-full bg-overlay'>
 			{/* Title */}
@@ -81,6 +86,7 @@ const ContactPage = () => {
 							/>
 						</div>
 						<Button cta fullWidth type='submit'>
+							<FaPaperPlane />
 							submit
 						</Button>
 					</form>
@@ -93,8 +99,8 @@ const ContactPage = () => {
 							}`}
 							onClick={() => setContactStatus('')}
 						>
-							{contactStatus}
 							{contactStatus === 'Submitted Successfully' ? <FaCheck /> : <FaTimes />}
+							{contactStatus}
 						</Button>
 					)}
 				</VisibleWrapper>

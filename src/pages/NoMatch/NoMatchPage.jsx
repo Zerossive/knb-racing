@@ -6,12 +6,15 @@ const NoMatchPage = () => {
 	const urlParams = new URLSearchParams(window.location.search)
 	useEffect(() => {
 		urlParams.has('v') && (window.location = '/')
-	})
+		document.title = 'Error 404 - KNB Racing'
+	}, [])
 
 	return (
 		<div className='prose prose-invert mx-auto min-h-screen w-full p-12 text-center'>
 			<h1>Oops!</h1>
-			<p>This page does not exist.</p>
+			<p>
+				<span className='font-bold'>404:</span> This page does not exist.
+			</p>
 			<a href='/'>
 				<Button cta>Go Home</Button>
 			</a>

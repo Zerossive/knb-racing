@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Transition from '../../components/Transition'
 import Section from '../../components/Section'
 import Article from '../../components/Article'
@@ -6,6 +6,10 @@ import Socials from '../../components/Socials'
 import VisibleWrapper from '../../components/VisibleWrapper'
 
 const SupportPage = () => {
+	useEffect(() => {
+		document.title = 'Support - KNB Racing'
+	}, [])
+
 	return (
 		<main className='w-full bg-overlay'>
 			{/* Title */}
@@ -43,7 +47,7 @@ const SupportPage = () => {
 							Kaylee's progress. Thank you for being a part of her journey and making
 							a difference.
 						</p>
-						<Socials />
+						<Socials showLabels block />
 					</Article>
 				</div>
 			</Section>

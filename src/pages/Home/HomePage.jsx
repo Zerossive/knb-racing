@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CallToAction from './CallToAction'
 import Transition from '../../components/Transition'
 import Section from '../../components/Section'
 import Article from '../../components/Article'
 
 const HomePage = () => {
+	useEffect(() => {
+		document.title = 'KNB Racing'
+	}, [])
 	return (
 		<main className='w-full bg-overlay'>
 			{/* Home CTA */}

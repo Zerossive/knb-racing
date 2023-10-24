@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Transition from '../../components/Transition'
 import Section from '../../components/Section'
-import Article from '../../components/Article'
 import Race from './Race'
+import VisibleWrapper from '../../components/VisibleWrapper'
+import Button from '../../components/Button'
+import { FaTimesCircle } from 'react-icons/fa'
 
 const RacesPage = () => {
 	const races = [
@@ -87,6 +89,26 @@ const RacesPage = () => {
 			description: '',
 		},
 	]
+
+	const [filteredRaces, setFilteredRaces] = useState(races)
+
+	const searchRaces = (e) => {
+		const newRaceList = races.filter((race) => {
+			if (
+				race.title.toUpperCase().includes(e.toUpperCase()) ||
+				race.description.toUpperCase().includes(e.toUpperCase())
+			) {
+				return 1
+			}
+			return 0
+		})
+		setFilteredRaces(newRaceList)
+	}
+
+	useEffect(() => {
+		document.title = 'Races - KNB Racing'
+	}, [])
+
 	return (
 		<main className='w-full bg-overlay'>
 			{/* Title */}
@@ -99,8 +121,36 @@ const RacesPage = () => {
 
 			{/* Example Article */}
 			<Section>
+				<VisibleWrapper className='mx-auto px-6'>
+					<div className='flex flex-col rounded-custom bg-overlay p-6 text-dark'>
+						<label htmlFor='search'>Search</label>
+						<div className='flex flex-wrap gap-6'>
+							<input
+								type='text'
+								id='search'
+								name='search'
+								className='flex-grow rounded-custom bg-surface bg-opacity-10 p-2'
+								onChange={(e) => {
+									searchRaces(e.target.value)
+								}}
+							/>
+							<Button
+								className='flex-grow'
+								onClick={() => {
+									document.getElementById('search').value = ''
+									setFilteredRaces(races)
+								}}
+							>
+								<FaTimesCircle />
+								Clear
+							</Button>
+						</div>
+					</div>
+				</VisibleWrapper>
+			</Section>
+			<Section>
 				<div className='grid w-full gap-6 px-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-					{races.map((race) => (
+					{filteredRaces.map((race) => (
 						<Race race={race} key={race.url} />
 					))}
 				</div>

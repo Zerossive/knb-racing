@@ -37,14 +37,12 @@ const Socials = (props) => {
 						'p-0 text-secondary',
 						block && 'rounded-custom bg-overlay px-6 py-3',
 					])}
-					onClick={() => {
-						window.location = social.url
-					}}
+					href={social.url}
 					key={social.name}
 				>
+					{social.logo}
 					{showLabels && <span className='text-dark'>{social.name}</span>}
 					{!showLabels && <span className='sr-only'>{social.name}</span>}
-					{social.logo}
 				</Button>
 			))}
 		</div>

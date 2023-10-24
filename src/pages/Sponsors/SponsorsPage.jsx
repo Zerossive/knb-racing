@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Transition from '../../components/Transition'
 import Section from '../../components/Section'
 import Sponsor from './Sponsor'
@@ -15,6 +15,10 @@ const SponsorsPage = () => {
 			url: 'https://jmrbodyworks.com/',
 		},
 	]
+
+	useEffect(() => {
+		document.title = 'Sponsors - KNB Racing'
+	}, [])
 
 	return (
 		<main className='w-full bg-overlay'>
@@ -42,14 +46,6 @@ const SponsorsPage = () => {
 					</p>
 				</Article>
 			</Section>
-			{/* <Section className='flex justify-center'>
-				<iframe
-					id='kofiframe'
-					src='https://ko-fi.com/knbracing/?hidefeed=true&widget=true&embed=true&preview=true'
-					className='h-[712px] w-min'
-					title='knbracing'
-				></iframe>
-			</Section> */}
 		</main>
 	)
 }

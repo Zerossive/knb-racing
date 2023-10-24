@@ -32,7 +32,7 @@ const Navbar = (props) => {
 
 	const handleLinkClick = (url) => {
 		setShowLinks(false)
-		navigate(url)
+		// navigate(url)
 		window.scrollTo({ top: 0 })
 	}
 
@@ -68,6 +68,7 @@ const Navbar = (props) => {
 					onClick={titleClick}
 					transparent
 					raise={false}
+					link={'/'}
 				>
 					KNB
 					<div
@@ -124,6 +125,7 @@ const Navbar = (props) => {
 							])}
 							transparent
 							onClick={() => handleLinkClick(link.url)}
+							link={link.url}
 						>
 							{link.title}
 						</Button>

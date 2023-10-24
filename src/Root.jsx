@@ -6,7 +6,7 @@ function Root() {
 	const navigate = useNavigate()
 
 	const handleTitleClick = () => {
-		navigate('/')
+		// navigate('/')
 		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}
 	return (

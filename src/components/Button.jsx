@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { twMerge } from 'tailwind-merge'
 
 const Button = (props) => {
@@ -24,15 +25,39 @@ const Button = (props) => {
 		gradientBorder = false,
 		underline = false,
 		simulate = false,
+		href = '',
+		link = '',
 		onClick,
 		className,
 	} = props
 
+	const CustomButton = ({ children, onClick, className }) => {
+		if (href) {
+			return (
+				<a onClick={onClick} className={className} href={href}>
+					{children}
+				</a>
+			)
+		} else if (link) {
+			return (
+				<Link onClick={onClick} className={className} to={link}>
+					{children}
+				</Link>
+			)
+		} else {
+			return (
+				<button onClick={onClick} className={className}>
+					{children}
+				</button>
+			)
+		}
+	}
+
 	return (
-		<button
+		<CustomButton
 			className={twMerge(
 				// Default Style
-				'group relative inline-flex items-center justify-center gap-3 bg-surface px-6 py-3 font-bold text-light duration-150 ease-in-out hover:opacity-90 active:opacity-80',
+				'group relative inline-flex items-center justify-center gap-3 bg-surface px-6 py-3 font-bold text-light no-underline duration-150 ease-in-out hover:opacity-90 active:opacity-80',
 
 				// Alternate General Styles
 				cta && 'bg-primary text-light',
@@ -41,7 +66,7 @@ const Button = (props) => {
 
 				// Base Properties
 				transparent && 'bg-transparent text-primary',
-				gradient && 'bg-gradient-to-tr from-primary to-purple-400 text-dark',
+				gradient && 'bg-gradient-to-tr from-primary to-secondary text-light',
 				gradientText &&
 					'bg-gradient-to-tr from-primary to-purple-400 bg-clip-text text-transparent',
 				border && 'border border-primary',
@@ -115,7 +140,7 @@ const Button = (props) => {
 					{children}
 				</div>
 			)}
-		</button>
+		</CustomButton>
 	)
 }
 
