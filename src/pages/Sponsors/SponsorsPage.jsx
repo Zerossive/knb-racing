@@ -18,6 +18,7 @@ const SponsorsPage = () => {
 
 	useEffect(() => {
 		document.title = 'Sponsors - KNB Racing'
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}, [])
 
 	return (

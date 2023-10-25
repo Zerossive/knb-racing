@@ -8,6 +8,7 @@ import VisibleWrapper from '../../components/VisibleWrapper'
 const SupportPage = () => {
 	useEffect(() => {
 		document.title = 'Support - KNB Racing'
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}, [])
 
 	return (

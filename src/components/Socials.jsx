@@ -5,7 +5,7 @@ import { SiKofi } from 'react-icons/si'
 import { twMerge } from 'tailwind-merge'
 
 const Socials = (props) => {
-	const { showLabels = false, small = false, block = false, className } = props
+	const { showLabels = false, small = false, block = false, grayscale = false, className } = props
 	const socials = [
 		{
 			name: 'Youtube',
@@ -36,6 +36,7 @@ const Socials = (props) => {
 					className={twMerge([
 						'p-0 text-secondary',
 						block && 'rounded-custom bg-overlay px-6 py-3',
+						grayscale && 'grayscale hover:grayscale-0',
 					])}
 					href={social.url}
 					key={social.name}

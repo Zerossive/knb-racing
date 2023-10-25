@@ -1,11 +1,61 @@
 import React from 'react'
-import Button from './Button'
 import Socials from './Socials'
+import { Link } from 'react-router-dom'
+import { FaInfoCircle, FaMailBulk } from 'react-icons/fa'
 
-const Footer = () => {
+const Footer = (props) => {
+	const {
+		logo = '/logo.svg',
+		links = [
+			{ title: 'Home', url: '/' },
+			{ title: 'Races', url: '/races' },
+			{ title: 'Sponsors', url: '/sponsors' },
+			{ title: 'Support', url: '/support' },
+			{ title: 'Contact', url: '/contact' },
+		],
+	} = props
+
 	return (
-		<footer className='flex flex-col items-center justify-between gap-3 overflow-auto bg-crust p-6 lg:flex-row'>
-			Copyright © 2023 Kaylee Boyce
+		<footer className='grid justify-center overflow-x-hidden bg-crust p-6 lg:grid-cols-[repeat(3,max-content)] lg:justify-between'>
+			<section className='flex justify-end gap-6 p-6 md:flex-col'>
+				<img src={logo} className='h-auto w-12 lg:w-20' alt='logo' />
+
+				<ul className='flex flex-wrap gap-3'>
+					{links.map((link) => (
+						<li
+							key={link.title}
+							className='font-bold duration-150 hover:text-secondary'
+						>
+							<Link to={link.url}>{link.title}</Link>
+						</li>
+					))}
+				</ul>
+			</section>
+
+			<section className='order-last flex flex-col justify-end p-6 md:order-none'>
+				<p className='opacity-50'>Copyright © 2023 Kaylee Boyce</p>
+			</section>
+
+			<section className='flex flex-col items-start gap-6 rounded-custom bg-surface p-6'>
+				<p>Want a website designed for you or your business?</p>
+				<div className='flex flex-wrap gap-3'>
+					<a
+						href='https://dannyharris.info'
+						className='flex items-center gap-3 font-bold duration-150 hover:text-secondary'
+					>
+						<FaInfoCircle />
+						dannyharris.info
+					</a>
+					<a
+						href='mailto:knbracer@gmail.com'
+						className='flex items-center gap-3 font-bold duration-150 hover:text-secondary'
+					>
+						<FaMailBulk />
+						knbracer@gmail.com
+					</a>
+				</div>
+				<Socials small className='' grayscale />
+			</section>
 			{/* TESTING */}
 			{/* <section className='m-3 bg-light p-12 text-dark'>
 				light
@@ -35,7 +85,6 @@ const Footer = () => {
 				</div>
 				</div>
 			</section> */}
-			<Socials small />
 		</footer>
 	)
 }

@@ -107,6 +107,7 @@ const RacesPage = () => {
 
 	useEffect(() => {
 		document.title = 'Races - KNB Racing'
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}, [])
 
 	return (
@@ -121,7 +122,7 @@ const RacesPage = () => {
 
 			{/* Example Article */}
 			<Section>
-				<VisibleWrapper className='mx-auto px-6'>
+				<div className='mx-auto animate-fade-in px-6'>
 					<div className='flex flex-col rounded-custom bg-overlay p-6 text-dark'>
 						<label htmlFor='search'>Search</label>
 						<div className='flex flex-wrap gap-6'>
@@ -146,9 +147,9 @@ const RacesPage = () => {
 							</Button>
 						</div>
 					</div>
-				</VisibleWrapper>
+				</div>
 			</Section>
-			<Section>
+			<Section className='pt-0'>
 				<div className='grid w-full gap-6 px-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
 					{filteredRaces.map((race) => (
 						<Race race={race} key={race.url} />

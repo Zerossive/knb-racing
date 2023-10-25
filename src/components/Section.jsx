@@ -21,13 +21,13 @@ const Section = (props) => {
 			/>
 
 			{/* Fade Top */}
-			<div className='absolute top-0 -z-10 h-1/4 w-full bg-gradient-to-b from-base to-transparent'></div>
+			<div className='absolute top-0 -z-10 h-1/4 w-full bg-gradient-to-b from-base to-transparent group-even:hidden'></div>
 
 			{/* Child Elements */}
 			<div className='flex flex-col gap-24'>{children}</div>
 
 			{/* Fade Bottom */}
-			<div className='absolute bottom-0 -z-10 h-1/4 w-full bg-gradient-to-t from-base to-transparent'></div>
+			<div className='absolute bottom-0 -z-10 h-1/4 w-full bg-gradient-to-t from-base to-transparent group-even:hidden'></div>
 		</section>
 	)
 }

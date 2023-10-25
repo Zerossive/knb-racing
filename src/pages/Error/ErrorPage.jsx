@@ -8,6 +8,7 @@ const ErrorPage = () => {
 
 	useEffect(() => {
 		document.title = 'Error - KNB Racing'
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}, [])
 
 	return (

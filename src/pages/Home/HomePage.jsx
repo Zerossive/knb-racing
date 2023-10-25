@@ -7,6 +7,7 @@ import Article from '../../components/Article'
 const HomePage = () => {
 	useEffect(() => {
 		document.title = 'KNB Racing'
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}, [])
 	return (
 		<main className='w-full bg-overlay'>

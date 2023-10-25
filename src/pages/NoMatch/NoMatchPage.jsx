@@ -7,6 +7,7 @@ const NoMatchPage = () => {
 	useEffect(() => {
 		urlParams.has('v') && (window.location = '/')
 		document.title = 'Error 404 - KNB Racing'
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}, [])
 
 	return (

@@ -28,6 +28,7 @@ const ContactPage = () => {
 
 	useEffect(() => {
 		document.title = 'Contact - KNB Racing'
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 	}, [])
 
 	return (
