@@ -1,6 +1,5 @@
 import React from 'react'
 import { twMerge } from 'tailwind-merge'
-import VisibilitySensor from 'react-visibility-sensor'
 import VisibleWrapper from './VisibleWrapper'
 
 const Article = (props) => {

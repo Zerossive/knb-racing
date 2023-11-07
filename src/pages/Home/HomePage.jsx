@@ -3,6 +3,7 @@ import CallToAction from './CallToAction'
 import Transition from '../../components/Transition'
 import Section from '../../components/Section'
 import Article from '../../components/Article'
+import ImageModal from '../../components/ImageModal'
 
 const HomePage = () => {
 	useEffect(() => {
@@ -35,14 +36,10 @@ const HomePage = () => {
 						determination, I can achieve my goals on and off the track.
 					</p>
 					<figure>
-						<img
+						<ImageModal
 							src='https://images.ctfassets.net/fx0qfimg9jd6/6eYMgjhTB2wewuZCJGCgkx/f0f244b172577210f10150a2425c2785/may_8_1.jpg?w=1920&h=540&fm=webp'
+							modalSrc='https://images.ctfassets.net/fx0qfimg9jd6/6eYMgjhTB2wewuZCJGCgkx/f0f244b172577210f10150a2425c2785/may_8_1.jpg'
 							alt='article image'
-							className='w-full rounded-custom border-2 border-light'
-							loading='lazy'
-							onLoad={(e) => {
-								e.target.classList.add('animate-fade-in')
-							}}
 						/>
 						<figcaption>Kaylee posing with her first trophy</figcaption>
 					</figure>
@@ -69,14 +66,10 @@ const HomePage = () => {
 						racer achieve her dreams and make history on the track!
 					</p>
 					<figure>
-						<img
+						<ImageModal
 							src='https://images.ctfassets.net/fx0qfimg9jd6/7ktKBDxR0hU2v8WFpkWknn/c2d7f388c47ddb1b93662422e12e2547/Racing_Photo.jpg?w=1920&h=540&fm=webp'
+							modalSrc='https://images.ctfassets.net/fx0qfimg9jd6/7ktKBDxR0hU2v8WFpkWknn/c2d7f388c47ddb1b93662422e12e2547/Racing_Photo.jpg'
 							alt='article image'
-							className='w-full rounded-custom border-2 border-light'
-							loading='lazy'
-							onLoad={(e) => {
-								e.target.classList.add('animate-fade-in')
-							}}
 						/>
 						<figcaption>Kaylee during a race</figcaption>
 					</figure>
