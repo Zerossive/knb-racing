@@ -33,7 +33,7 @@ const Footer = (props) => {
 			</section>
 
 			<section className='order-last flex flex-col justify-end p-6 md:order-none'>
-				<p className='opacity-50'>Copyright © 2023 Kaylee Boyce</p>
+				<p className='text-center opacity-50'>Copyright © 2023 Kaylee Boyce</p>
 			</section>
 
 			<section className='flex flex-col items-start gap-6 rounded-custom bg-surface p-6'>

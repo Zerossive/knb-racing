@@ -149,7 +149,7 @@ const RacesPage = () => {
 					</div>
 				</div>
 			</Section>
-			<Section className='pt-0'>
+			<Section>
 				<div className='grid w-full gap-6 px-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
 					{filteredRaces.map((race) => (
 						<Race race={race} key={race.url} />

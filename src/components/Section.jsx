@@ -7,7 +7,10 @@ const Section = (props) => {
 
 	return (
 		<section
-			className={twMerge(['group relative z-10 overflow-hidden bg-base py-12', className])}
+			className={twMerge([
+				'group relative z-10 overflow-hidden bg-base py-6 lg:py-12',
+				className,
+			])}
 		>
 			{/* Background */}
 			<img

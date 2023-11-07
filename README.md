@@ -1,4 +1,6 @@
-<img src="https://knbracing.com/logo.svg">
+<img src="https://knbracing.com/logo.svg" style='width:128px'>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ccf417c7-b4fa-40bc-ae42-d8bd1fe4110e/deploy-status)](https://app.netlify.com/sites/knbracing/deploys)
 
 # KNB Racing
 
