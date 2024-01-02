@@ -98,7 +98,7 @@ const Navbar = (props) => {
 			{/* Links */}
 			<ul
 				className={twMerge([
-					'absolute bottom-0 -z-10 flex h-max w-full flex-col items-center bg-base opacity-0 duration-150 ease-in-out md:static md:z-0 md:w-auto md:flex-row md:gap-3 md:bg-crust md:opacity-100',
+					'absolute bottom-0 -z-10 flex h-max w-full flex-col items-center bg-base opacity-0 duration-150 ease-in-out md:static md:z-0 md:w-auto md:flex-row md:bg-crust md:opacity-100',
 					showLinks && 'translate-y-full opacity-100 md:translate-y-0',
 					linksLeft && 'order-first justify-start',
 					transparent && 'bg-transparent',
@@ -119,8 +119,8 @@ const Navbar = (props) => {
 							fullWidth
 							underline
 							className={twMerge([
-								'font-extrabold text-light',
-								leftAlign && 'px-3t justify-start border-transparent',
+								'px-3 font-extrabold text-light lg:px-6',
+								leftAlign && 'justify-start border-transparent px-3',
 								location.pathname === link.url && 'text-secondary',
 							])}
 							transparent

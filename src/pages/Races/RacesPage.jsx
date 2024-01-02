@@ -9,6 +9,21 @@ import { FaTimesCircle } from 'react-icons/fa'
 const RacesPage = () => {
 	const races = [
 		{
+			title: '2023-11-19',
+			url: 'https://www.youtube.com/watch?v=w-I8Z9HlXUU',
+			description: '',
+		},
+		{
+			title: '2023-10-14',
+			url: 'https://www.youtube.com/watch?v=tBzEk_cP7rE',
+			description: '',
+		},
+		{
+			title: '2023-10-07',
+			url: 'https://www.youtube.com/watch?v=Mo0D9BP72oM',
+			description: '',
+		},
+		{
 			title: '2023-09-30',
 			url: 'https://www.youtube.com/watch?v=RIxeirLT4pQ',
 			description: '',
