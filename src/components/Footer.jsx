@@ -16,9 +16,9 @@ const Footer = (props) => {
 	} = props
 
 	return (
-		<footer className='grid justify-center overflow-x-hidden bg-crust p-6 lg:grid-cols-[repeat(3,max-content)] lg:justify-between'>
-			<section className='flex justify-end gap-6 p-6 md:flex-col'>
-				<img src={logo} className='h-auto w-12 lg:w-20' alt='logo' />
+		<footer className='grid justify-center overflow-x-hidden bg-crust p-6 xl:grid-cols-[repeat(3,max-content)] xl:justify-between'>
+			<section className='flex items-center justify-end gap-6 p-6 xl:flex-col xl:items-start'>
+				<img src={logo} className='h-12 w-auto' alt='logo' />
 
 				<ul className='flex flex-wrap gap-3'>
 					{links.map((link) => (

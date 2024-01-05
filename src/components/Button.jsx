@@ -130,7 +130,7 @@ const Button = (props) => {
 			{underline && (
 				<div
 					className={twMerge([
-						'absolute left-1/2 top-full h-1 w-3/4 -translate-x-1/2 bg-primary opacity-0 duration-150 ease-in-out group-hover:-translate-y-3 group-hover:opacity-100 group-active:w-5/6 group-active:opacity-100',
+						'absolute left-1/2 top-full h-1 w-3/4 -translate-x-1/2 bg-secondary opacity-0 duration-150 ease-in-out group-hover:-translate-y-3 group-hover:opacity-100 group-active:w-5/6 group-active:opacity-100',
 						(rounded || pill) && 'rounded-full',
 					])}
 				></div>

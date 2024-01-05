@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Transition from '../../components/Transition'
 import Section from '../../components/Section'
 import Race from './Race'
-import VisibleWrapper from '../../components/VisibleWrapper'
 import Button from '../../components/Button'
 import { FaTimesCircle } from 'react-icons/fa'
 
@@ -145,7 +144,7 @@ const RacesPage = () => {
 								type='text'
 								id='search'
 								name='search'
-								className='flex-grow rounded-custom bg-surface bg-opacity-10 p-2'
+								className='w-full flex-grow rounded-custom bg-surface bg-opacity-10 p-2 lg:w-auto'
 								onChange={(e) => {
 									searchRaces(e.target.value)
 								}}

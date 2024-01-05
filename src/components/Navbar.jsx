@@ -70,14 +70,12 @@ const Navbar = (props) => {
 					raise={false}
 					link={'/'}
 				>
-					KNB
-					<div
-						className={twMerge(['aspect-square h-12', logoClick && 'cursor-pointer'])}
+					<img
+						src='/banner.svg'
+						className='mx-auto h-12'
+						alt='logo'
 						onClick={logoClick}
-					>
-						<img src='/logo.svg' className='ml-auto h-full' alt='logo' />
-					</div>
-					Racing
+					/>
 				</Button>
 
 				{/* Menu Button */}
@@ -123,6 +121,7 @@ const Navbar = (props) => {
 								leftAlign && 'justify-start border-transparent px-3',
 								location.pathname === link.url && 'text-secondary',
 							])}
+							scale={false}
 							transparent
 							onClick={() => handleLinkClick(link.url)}
 							link={link.url}

@@ -6,30 +6,37 @@ import { twMerge } from 'tailwind-merge'
 
 const Socials = (props) => {
 	const { showLabels = false, small = false, block = false, grayscale = false, className } = props
+
+	const classNames = twMerge([
+		'h-12 w-auto drop-shadow-[3px_2px_0_theme(colors.crust)]',
+		small && 'h-8 drop-shadow-none',
+	])
+	// const classNames = twMerge(['h-12 w-auto stroke-crust stroke-[1%]', small && 'h-8'])
+
 	const socials = [
 		{
 			name: 'Youtube',
 			url: 'https://www.youtube.com/@KNB_Racing',
-			logo: <FaYoutube className={twMerge(['h-12 w-auto', small && 'h-8'])} />,
+			logo: <FaYoutube className={classNames} />,
 		},
 		{
 			name: 'Instagram',
 			url: 'https://www.instagram.com/knb_racing18',
-			logo: <FaInstagram className={twMerge(['h-12 w-auto', small && 'h-8'])} />,
+			logo: <FaInstagram className={classNames} />,
 		},
 		{
 			name: 'TikTok',
 			url: 'https://www.tiktok.com/@kayleeboyce_18',
-			logo: <FaTiktok className={twMerge(['h-12 w-auto', small && 'h-8'])} />,
+			logo: <FaTiktok className={classNames} />,
 		},
 		{
 			name: 'Ko-fi',
 			url: 'https://ko-fi.com/knbracing',
-			logo: <SiKofi className={twMerge(['h-12 w-auto', small && 'h-8'])} />,
+			logo: <SiKofi className={classNames} />,
 		},
 	]
 	return (
-		<div className={twMerge(['flex flex-wrap gap-3', className])}>
+		<div className={twMerge(['stroke flex flex-wrap gap-3', className])}>
 			{socials.map((social) => (
 				<Button
 					transparent
