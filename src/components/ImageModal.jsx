@@ -11,6 +11,7 @@ const ImageModal = (props) => {
 		rounded = true,
 		loading = 'lazy',
 		className,
+		altclassName = '',
 	} = props
 
 	const imageModal = useRef(0)
@@ -50,6 +51,7 @@ const ImageModal = (props) => {
 						border && 'border-0 border-light',
 						rounded && 'rounded-custom',
 						className,
+						altclassName,
 					])}
 					onLoad={(e) => {
 						e.target.classList.add('animate-fade-in')

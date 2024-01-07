@@ -16,8 +16,8 @@ const Footer = (props) => {
 	} = props
 
 	return (
-		<footer className='grid justify-center overflow-x-hidden bg-crust p-6 xl:grid-cols-[repeat(3,max-content)] xl:justify-between'>
-			<section className='flex items-center justify-end gap-6 p-6 xl:flex-col xl:items-start'>
+		<footer className='grid justify-center overflow-x-hidden bg-crust xl:grid-cols-[repeat(3,max-content)] xl:justify-between'>
+			<section className='flex items-center justify-end gap-6 p-6 xl:flex-col xl:items-start xl:p-12'>
 				<img src={logo} className='h-12 w-auto' alt='logo' />
 
 				<ul className='flex flex-wrap gap-3'>
@@ -32,29 +32,31 @@ const Footer = (props) => {
 				</ul>
 			</section>
 
-			<section className='order-last flex flex-col justify-end p-6 md:order-none'>
+			<section className='order-last flex flex-col justify-end p-6 xl:order-none xl:p-12'>
 				<p className='text-center opacity-50'>Copyright © 2023 Kaylee Boyce</p>
 			</section>
 
-			<section className='flex flex-col items-start gap-6 rounded-custom bg-surface p-6'>
-				<p>Want a website designed for you or your business?</p>
-				<div className='flex flex-wrap gap-3'>
-					<a
-						href='https://dannyharris.info'
-						className='flex items-center gap-3 font-bold duration-150 hover:text-secondary'
-					>
-						<FaInfoCircle />
-						dannyharris.info
-					</a>
-					<a
-						href='mailto:knbracer@gmail.com'
-						className='flex items-center gap-3 font-bold duration-150 hover:text-secondary'
-					>
-						<FaMailBulk />
-						knbracer@gmail.com
-					</a>
+			<section className='px-6 xl:py-6'>
+				<div className='flex flex-col items-start gap-6 rounded-custom bg-surface p-6'>
+					<p>Want a website designed for you or your business?</p>
+					<div className='flex flex-wrap gap-3'>
+						<a
+							href='https://dannyharris.info'
+							className='flex items-center gap-3 font-bold duration-150 hover:text-secondary'
+						>
+							<FaInfoCircle />
+							dannyharris.info
+						</a>
+						<a
+							href='mailto:knbracer@gmail.com'
+							className='flex items-center gap-3 font-bold duration-150 hover:text-secondary'
+						>
+							<FaMailBulk />
+							knbracer@gmail.com
+						</a>
+					</div>
+					<Socials small className='' grayscale />
 				</div>
-				<Socials small className='' grayscale />
 			</section>
 			{/* TESTING */}
 			{/* <section className='m-3 bg-light p-12 text-dark'>

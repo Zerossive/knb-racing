@@ -3,6 +3,7 @@ import VisibilitySensor from 'react-visibility-sensor'
 import { twMerge } from 'tailwind-merge'
 import Button from '../../components/Button'
 import { FaInfoCircle } from 'react-icons/fa'
+import ImageModal from '../../components/ImageModal'
 
 const Sponsor = ({ sponsor }) => {
 	const { url, title, description, image } = sponsor
@@ -15,20 +16,15 @@ const Sponsor = ({ sponsor }) => {
 						isVisible && 'scale-100 opacity-100',
 					])}
 				>
-					<img
+					<ImageModal
 						src={image}
+						className='w-96 bg-overlay'
+						altclassName='w-auto'
 						alt='sponsor image'
-						className='w-96 rounded-custom border-2 border-light bg-overlay opacity-0'
-						// className='w-full rounded-custom border-2 border-light bg-overlay md:w-3/4 lg:w-1/2 xl:w-1/3'
-						loading='lazy'
-						onLoad={(e) => {
-							e.target.classList.remove('opacity-0')
-							e.target.classList.add('animate-fade-in')
-						}}
 					/>
 					<section className='prose prose-invert flex grow flex-col lg:prose-xl'>
-						<h2 className='!mt-0'>{title}</h2>
-						<p className=''>{description}</p>
+						<h2>{title}</h2>
+						<p>{description}</p>
 						{url && (
 							<Button fullWidth cta href={url}>
 								<FaInfoCircle />
