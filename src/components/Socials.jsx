@@ -11,7 +11,6 @@ const Socials = (props) => {
 		'h-12 w-auto drop-shadow-[3px_2px_0_theme(colors.crust)]',
 		small && 'h-8 drop-shadow-none',
 	])
-	// const classNames = twMerge(['h-12 w-auto stroke-crust stroke-[1%]', small && 'h-8'])
 
 	const socials = [
 		{
@@ -21,7 +20,7 @@ const Socials = (props) => {
 		},
 		{
 			name: 'Instagram',
-			url: 'https://www.instagram.com/knb_racing18',
+			url: 'https://www.instagram.com/kaylee._.boyce',
 			logo: <FaInstagram className={classNames} />,
 		},
 		{

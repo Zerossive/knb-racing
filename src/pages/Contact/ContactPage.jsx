@@ -109,9 +109,9 @@ const ContactPage = () => {
 			<Section>
 				<Article>
 					<p>
-						Feel free to reach out if you have any questions, feel free to shoot us an
-						email at <a href='mailto:knbracer@gmail.com'>knbracer@gmail.com</a>, and
-						check out our socials:
+						Feel free to reach out if you have any questions and shoot us an email at{' '}
+						<a href='mailto:knbracer@gmail.com'>knbracer@gmail.com</a>, and check out
+						our socials:
 					</p>
 					<Socials showLabels block />
 				</Article>

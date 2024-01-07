@@ -8,9 +8,7 @@ export default {
 		extend: {
 			colors: {
 				primary: `#420080`,
-				// primary: colors.purple['900'],
 				secondary: '#52DAE8',
-				// secondary: '#00d8e8',
 				dark: colors.zinc['900'],
 				light: colors.zinc['50'],
 				overlay: colors.zinc['50'],

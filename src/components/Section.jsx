@@ -15,11 +15,11 @@ const Section = (props) => {
 			{/* Background */}
 			<img
 				src={track}
-				className='absolute left-0 top-1/2 -z-10 hidden h-full w-full -translate-y-1/2 select-none bg-transparent object-cover object-bottom group-even:hidden'
+				className='absolute left-0 top-1/2 -z-10 h-full w-full -translate-y-1/2 select-none bg-transparent object-cover object-bottom opacity-0 group-even:hidden'
 				alt='track background'
 				loading='lazy'
 				onLoad={(e) => {
-					e.target.classList.remove('hidden')
+					e.target.classList.remove('opacity-0')
 					e.target.classList.add('animate-fade-in')
 				}}
 			/>

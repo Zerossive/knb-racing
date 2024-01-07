@@ -22,12 +22,13 @@ const ImageModal = (props) => {
 				alt={alt}
 				loading={loading}
 				className={twMerge([
-					'w-full cursor-zoom-in',
+					'w-full cursor-zoom-in opacity-0',
 					border && 'border-2 border-light',
 					rounded && 'rounded-custom',
 					className,
 				])}
 				onLoad={(e) => {
+					e.target.classList.remove('opacity-0')
 					e.target.classList.add('animate-fade-in')
 				}}
 				onClick={() => imageModal.current?.showModal()}
