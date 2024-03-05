@@ -23,7 +23,7 @@ const SupportPage = () => {
 
 			{/* Example Article */}
 			<Section className='flex justify-center'>
-				<div className='flex flex-wrap justify-center gap-12'>
+				<div className='flex flex-wrap justify-center gap-x-6 gap-y-12'>
 					<VisibleWrapper>
 						<iframe
 							id='kofiframe'
