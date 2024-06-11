@@ -6,6 +6,7 @@ const ImageModal = (props) => {
 	const {
 		src = '',
 		modalSrc = src,
+		srcset = '',
 		alt = '',
 		border = true,
 		rounded = true,
@@ -20,6 +21,7 @@ const ImageModal = (props) => {
 		<>
 			<img
 				src={src}
+				srcset={srcset}
 				alt={alt}
 				loading={loading}
 				className={twMerge([

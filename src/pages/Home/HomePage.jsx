@@ -37,11 +37,12 @@ const HomePage = () => {
 					</p>
 					<figure>
 						<ImageModal
-							src='https://images.ctfassets.net/fx0qfimg9jd6/6eYMgjhTB2wewuZCJGCgkx/f0f244b172577210f10150a2425c2785/may_8_1.jpg?w=1920&h=540&fm=webp'
-							modalSrc='https://images.ctfassets.net/fx0qfimg9jd6/6eYMgjhTB2wewuZCJGCgkx/f0f244b172577210f10150a2425c2785/may_8_1.jpg'
+							src='https://i.postimg.cc/htXHjMq2/knb-kaylee-1200.jpg'
+							modalSrc='https://i.postimg.cc/htNN7xDc/knb-kaylee-full.jpg'
+							srcset='https://i.postimg.cc/gk299mtF/knb-kaylee-400.jpg 400w, https://i.postimg.cc/htXHjMq2/knb-kaylee-1200.jpg 1200w'
 							alt='article image'
 						/>
-						<figcaption>Kaylee posing with her first trophy</figcaption>
+						<figcaption>Kaylee posing with her trophy</figcaption>
 					</figure>
 				</Article>
 			</Section>
@@ -67,8 +68,9 @@ const HomePage = () => {
 					</p>
 					<figure>
 						<ImageModal
-							src='https://images.ctfassets.net/fx0qfimg9jd6/7ktKBDxR0hU2v8WFpkWknn/c2d7f388c47ddb1b93662422e12e2547/Racing_Photo.jpg?w=1920&h=540&fm=webp'
-							modalSrc='https://images.ctfassets.net/fx0qfimg9jd6/7ktKBDxR0hU2v8WFpkWknn/c2d7f388c47ddb1b93662422e12e2547/Racing_Photo.jpg'
+							src='https://i.postimg.cc/NfJ3BSZy/knb-car-full.jpg'
+							modalSrc='https://i.postimg.cc/NfJ3BSZy/knb-car-full.jpg'
+							srcset='https://i.postimg.cc/Pf4GFP4Q/knb-car-400.jpg 400w, https://i.postimg.cc/NfJ3BSZy/knb-car-full.jpg 1000w'
 							alt='article image'
 						/>
 						<figcaption>Kaylee during a race</figcaption>
