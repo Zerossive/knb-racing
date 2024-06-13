@@ -11,28 +11,36 @@ const SponsorsPage = () => {
 			title: 'JM&R Body Works',
 			description:
 				"At JM&R Body Works, we are leading the way as Dallas Metroplex's most equipped body shop founded in August 2015 by John Chisolm, previous owner of W&B Service Company and John Keith, long time body technician and former United States Reconnaissance Marine.",
-			image: 'https://images.ctfassets.net/fx0qfimg9jd6/MiN1pq3PVgKsxWYMqzkZx/d84d8c7d868eaf6a852eed6f1d55c5f5/JMR-logo.png?w=1920&h=360&fm=webp',
+			src: 'https://i.postimg.cc/Y9mDC9Jh/knb-sponsor-jmr-full.png',
+			// srcset: '',
+			modalSrc: 'https://i.postimg.cc/Y9mDC9Jh/knb-sponsor-jmr-full.png',
 			url: 'https://jmrbodyworks.com/',
 		},
 		{
 			title: 'DuBose Funeral Home',
 			description:
 				'DuBose Funeral Home is Family Owned and operated. We at DuBose Funeral Home are dedicated to providing services to the families that have lost loved ones with care and compassion.',
-			image: 'https://i.postimg.cc/BbgLDq9t/dubose.jpg',
+			src: 'https://i.postimg.cc/YqcbWz1d/knb-sponsor-dubose-full.jpg',
+			srcset: 'https://i.postimg.cc/FKFPKFjm/knb-sponsor-dubose-400.jpg 400w, https://i.postimg.cc/909bkDjP/knb-sponsor-dubose-1200.jpg 1200w',
+			modalSrc: 'https://i.postimg.cc/YqcbWz1d/knb-sponsor-dubose-full.jpg',
 			url: 'https://www.dubosefuneralhome.com/',
 		},
 		{
 			title: 'Blue Dream Constructions',
 			description:
 				'Full Scale Remodel, Roofing, Landscaping, Painting, Plumbing, Electrician work, Tile Work, AC Repair',
-			image: 'https://i.postimg.cc/sXD0tC5S/blue-dream.jpg',
+			src: 'https://i.postimg.cc/B6XMxhYV/knb-sponsor-blue-dream-full.jpg',
+			srcset: 'https://i.postimg.cc/tgrBn056/knb-sponsor-blue-dream-400.jpg 400w, https://i.postimg.cc/B6XMxhYV/knb-sponsor-blue-dream-full.jpg 600w',
+			modalSrc: 'https://i.postimg.cc/B6XMxhYV/knb-sponsor-blue-dream-full.jpg',
 			url: 'https://www.facebook.com/BDCCompany',
 		},
 		{
 			title: 'Lone Star Accessories',
 			description:
 				'1 STOP SHOP for ALL YOUR VEHICLES SERVICE NEEDS. Wheels & Tires, ALIGNMENTS Suspension Lift kits, Drop kiTS. Everything done here. Master mechanic on duty',
-			image: 'https://i.postimg.cc/G23TGdy4/lone-star.jpg',
+			src: 'https://i.postimg.cc/dQZ53xT7/knb-sponsor-lone-star-full.jpg',
+			srcset: 'https://i.postimg.cc/sXqKKpbD/knb-sponsor-lone-star-400.jpg 400w, https://i.postimg.cc/dQZ53xT7/knb-sponsor-lone-star-full.jpg 700w',
+			modalSrc: 'https://i.postimg.cc/dQZ53xT7/knb-sponsor-lone-star-full.jpg',
 			url: 'https://www.facebook.com/LsaTexas45/',
 		},
 	]

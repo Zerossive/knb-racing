@@ -28,6 +28,7 @@ export default {
 			animation: {
 				'fade-in': 'fade-in .5s ease-in-out',
 				'fade-out': 'fade-out .5s ease-in-out',
+				grow: 'grow .5s',
 			},
 			keyframes: {
 				'fade-in': {
@@ -44,6 +45,14 @@ export default {
 					},
 					'100%': {
 						opacity: '0',
+					},
+				},
+				grow: {
+					'0%': {
+						scale: '0.7',
+					},
+					'100%': {
+						scale: '1',
 					},
 				},
 			},

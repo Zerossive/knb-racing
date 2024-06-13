@@ -4,6 +4,8 @@ import Transition from '../../components/Transition'
 import Section from '../../components/Section'
 import Article from '../../components/Article'
 import ImageModal from '../../components/ImageModal'
+import { History } from './History'
+import { Carousel } from './Carousel'
 
 const HomePage = () => {
 	useEffect(() => {
@@ -76,6 +78,14 @@ const HomePage = () => {
 						<figcaption>Kaylee during a race</figcaption>
 					</figure>
 				</Article>
+			</Section>
+
+			<Section>
+				<History />
+			</Section>
+
+			<Section>
+				<Carousel />
 			</Section>
 		</main>
 	)

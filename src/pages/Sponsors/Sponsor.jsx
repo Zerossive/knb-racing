@@ -6,7 +6,7 @@ import { FaInfoCircle } from 'react-icons/fa'
 import ImageModal from '../../components/ImageModal'
 
 const Sponsor = ({ sponsor }) => {
-	const { url, title, description, image } = sponsor
+	const { url, title, description, src, srcset, modalSrc } = sponsor
 	return (
 		<VisibilitySensor partialVisibility minTopValue={150}>
 			{({ isVisible }) => (
@@ -17,7 +17,9 @@ const Sponsor = ({ sponsor }) => {
 					])}
 				>
 					<ImageModal
-						src={image}
+						src={src}
+						srcset={srcset}
+						modalSrc={modalSrc}
 						className='w-96 bg-overlay'
 						altclassName='w-auto'
 						alt='sponsor image'
