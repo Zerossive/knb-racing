@@ -19,7 +19,7 @@ const Transition = ({ showCar }) => {
 					src={carink}
 					alt='car'
 					className='pointer-events-none absolute bottom-0 right-5 max-h-[clamp(50px,66vh,700px)] w-2/3 origin-top-right translate-y-1/3 object-contain object-right transition md:right-10 md:translate-y-1/4 lg:right-24'
-					loading='lazy'
+					// loading='lazy'
 					onLoad={(e) => {
 						e.target.classList.add('animate-fade-in', 'animate-grow')
 					}}
