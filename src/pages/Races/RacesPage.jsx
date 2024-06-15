@@ -8,6 +8,16 @@ import { FaTimesCircle } from 'react-icons/fa'
 const RacesPage = () => {
 	const races = [
 		{
+			title: '2024-06-08 Crash Into Wall',
+			url: 'https://www.youtube.com/watch?v=vV9LhydPOEU',
+			description: 'Hard crash into the wall destroys side of the car',
+		},
+		{
+			title: '2024-05-18',
+			url: 'https://www.youtube.com/watch?v=pMf55nmiA44',
+			description: '',
+		},
+		{
 			title: '2024-05-11',
 			url: 'https://www.youtube.com/watch?v=7i2vpdW5YM0',
 			description: '',
@@ -95,7 +105,7 @@ const RacesPage = () => {
 		{
 			title: '2023-08-12 Fire',
 			url: 'https://www.youtube.com/watch?v=Z3s-qmgXnFc',
-			description: '',
+			description: 'Car in front spontaneously combusts',
 		},
 		{
 			title: '2023-08-06',
@@ -135,7 +145,7 @@ const RacesPage = () => {
 		{
 			title: '2023-04-01 Crash into Flip',
 			url: 'https://www.youtube.com/watch?v=eb4YQ_8bZEE',
-			description: '',
+			description: 'Car in front gets flipped over against the wall',
 		},
 		{
 			title: '2023-03-18',
