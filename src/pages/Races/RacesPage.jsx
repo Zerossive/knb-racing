@@ -8,6 +8,11 @@ import { FaTimesCircle } from 'react-icons/fa'
 const RacesPage = () => {
 	const races = [
 		{
+			title: '2024-06-21',
+			url: 'https://www.youtube.com/watch?v=lUdXDteiLCo',
+			description: '',
+		},
+		{
 			title: '2024-06-08 Crash Into Wall',
 			url: 'https://www.youtube.com/watch?v=vV9LhydPOEU',
 			description: 'Hard crash into the wall destroys side of the car',
