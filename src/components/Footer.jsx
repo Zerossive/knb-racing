@@ -43,11 +43,11 @@ const Footer = (props) => {
 					<p>Want a website designed for you or your business?</p>
 					<div className='flex flex-wrap gap-3'>
 						<a
-							href='https://dannyharris.info'
+							href='https://dannyharris.dev'
 							className='flex items-center gap-3 font-bold duration-150 hover:text-secondary'
 						>
 							<FaInfoCircle />
-							dannyharris.info
+							dannyharris.dev
 						</a>
 						<a
 							href='mailto:knbracer@gmail.com'
