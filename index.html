@@ -58,7 +58,35 @@
 		/>
 
 		<!-- Google Font -->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Racing+Sans+One" />
+		<!-- warm up fonts't origin -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<!-- initiate high-priority, async fetch for css -->
+		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap"
+		/>
+		<!-- initiate low-priority, async fetch for css (for compatibility) -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap"
+			media="print"
+			onload="this.media='all'"
+		/>
+		<!-- fall back to original method is js is disabled -->
+		<noscript>
+			<link
+				href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap"
+				rel="stylesheet"
+			/>
+		</noscript>
+
+		<!-- Google Search Verification -->
+		<meta
+			name="google-site-verification"
+			content="gTLz-qvx8vlJgF7dbb4vYnRtBysejIysn2g2DmHkuTE"
+		/>
 	</head>
 	<body style="background-color: #1f1e23">
 		<div id="root"></div>
