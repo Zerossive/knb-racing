@@ -11,6 +11,7 @@ import RacesPage from './pages/Races/RacesPage'
 import SponsorsPage from './pages/Sponsors/SponsorsPage'
 import SupportPage from './pages/Support/SupportPage'
 import { registerSW } from 'virtual:pwa-register'
+import { BrandingPage } from './pages/Branding/BrandingPage'
 
 // Check for service worker status
 registerSW({
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
 					{
 						path: 'support',
 						element: <SupportPage />,
+					},
+					{
+						path: 'branding',
+						element: <BrandingPage />,
 					},
 				],
 			},
