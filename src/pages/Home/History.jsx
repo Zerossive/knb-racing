@@ -7,14 +7,10 @@ export const History = () => {
 		{
 			date: '2020',
 			description: "Outlaw Race of 2020 sparks Kaylee's interest in racing",
-			// src: 'https://i.postimg.cc/NfJ3BSZy/knb-car-full.jpg',
-			// modalsrc: 'https://i.postimg.cc/NfJ3BSZy/knb-car-full.jpg',
 		},
 		{
 			date: '2021',
 			description: 'Kaylee enters her first racing season in a newly built tuner car',
-			// src: 'https://i.postimg.cc/NfJ3BSZy/knb-car-full.jpg',
-			// modalsrc: 'https://i.postimg.cc/NfJ3BSZy/knb-car-full.jpg',
 		},
 		{
 			date: '2024',
@@ -22,6 +18,13 @@ export const History = () => {
 			src: 'https://i.postimg.cc/Xq6c7FZX/knb-new-car-1200.jpg',
 			srcset: 'https://i.postimg.cc/B6KB0Nnd/knb-new-car-400.jpg 400w, https://i.postimg.cc/Xq6c7FZX/knb-new-car-1200.jpg 1200w, https://i.postimg.cc/FzbbfRcp/knb-new-car-full.jpg 3000w',
 			modalSrc: 'https://i.postimg.cc/FzbbfRcp/knb-new-car-full.jpg',
+		},
+		{
+			date: '2026',
+			description: 'First race with a new car design',
+			src: 'https://i.postimg.cc/qqx8tz3t/2026-racecar-1200.webp',
+			srcset: 'https://i.postimg.cc/90YG4r7z/2026-racecar-400.webp 400w, https://i.postimg.cc/qqx8tz3t/2026-racecar-1200.webp 1200w, https://i.postimg.cc/kGvxVBb6/2026-racecar-1920.webp 3000w',
+			modalSrc: 'https://i.postimg.cc/kGvxVBb6/2026-racecar-1920.webp',
 		},
 		{
 			date: 'Present',

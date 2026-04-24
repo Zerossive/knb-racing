@@ -3,7 +3,7 @@ import carink from '../assets/carink.svg'
 
 const Transition = ({ showCar }) => {
 	return (
-		<div className='pointer-events-none relative z-20 h-0 bg-transparent pt-12'>
+		<div className='pointer-events-none relative z-20 h-0 bg-transparent pt-20'>
 			{/* Triangle */}
 			<svg
 				className='w-full origin-bottom -translate-y-[calc(100%-1px)] scale-y-125 fill-base'

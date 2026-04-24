@@ -10,9 +10,9 @@ export const Carousel = () => {
 
 	const slides = [
 		{
-			src: 'https://i.postimg.cc/DwPzjqfc/knb-old-car-frame-1200.jpg',
-			srcset: 'https://i.postimg.cc/7PjbfHQS/knb-old-car-frame-400.jpg 400w, https://i.postimg.cc/DwPzjqfc/knb-old-car-frame-1200.jpg 1200w, https://i.postimg.cc/26V8SMQH/knb-old-car-frame-full.jpg 3000w',
-			imgModal: 'https://i.postimg.cc/26V8SMQH/knb-old-car-frame-full.jpg',
+			src: 'https://i.postimg.cc/qqqkKFts/2026-working-1200.webp',
+			srcset: 'https://i.postimg.cc/kGGnSHVW/2026-working-400.webp 400w, https://i.postimg.cc/qqqkKFts/2026-working-1200.webp 900w, https://i.postimg.cc/qqqkKFtX/2026-working-1920.webp 3000w',
+			imgModal: 'https://i.postimg.cc/qqqkKFtX/2026-working-1920.webp',
 		},
 		{
 			src: 'https://i.postimg.cc/438xZs97/knb-old-car-full.jpg',
@@ -23,6 +23,11 @@ export const Carousel = () => {
 			src: 'https://i.postimg.cc/rpywvKK2/knb-old-car-race-full.jpg',
 			srcset: 'https://i.postimg.cc/sDSxWktq/knb-old-car-race-400.jpg 400w, https://i.postimg.cc/rpywvKK2/knb-old-car-race-full.jpg 900w',
 			imgModal: 'https://i.postimg.cc/rpywvKK2/knb-old-car-race-full.jpg',
+		},
+		{
+			src: 'https://i.postimg.cc/DwPzjqfc/knb-old-car-frame-1200.jpg',
+			srcset: 'https://i.postimg.cc/7PjbfHQS/knb-old-car-frame-400.jpg 400w, https://i.postimg.cc/DwPzjqfc/knb-old-car-frame-1200.jpg 1200w, https://i.postimg.cc/26V8SMQH/knb-old-car-frame-full.jpg 3000w',
+			imgModal: 'https://i.postimg.cc/26V8SMQH/knb-old-car-frame-full.jpg',
 		},
 	]
 

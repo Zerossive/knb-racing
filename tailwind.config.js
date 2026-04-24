@@ -7,8 +7,8 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: `#420080`,
-				secondary: '#52DAE8',
+				primary: '#3d2a9e',
+				secondary: '#8575dd',
 				dark: colors.zinc['900'],
 				light: colors.zinc['50'],
 				overlay: colors.zinc['50'],

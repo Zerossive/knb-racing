@@ -21,7 +21,7 @@ const HomePage = () => {
 			<Transition showCar />
 
 			{/* Intro Article */}
-			<Section className='pt-12 lg:pt-36'>
+			<Section className='pt-16 lg:pt-36'>
 				<Article>
 					<h2>Who is Kaylee?</h2>
 					<p>
