@@ -16,14 +16,16 @@ const Sponsor = ({ sponsor }) => {
 						isVisible && 'scale-100 opacity-100',
 					])}
 				>
-					<ImageModal
-						src={src}
-						srcset={srcset}
-						modalSrc={modalSrc}
-						className='w-96 bg-overlay'
-						altclassName='w-auto'
-						alt='sponsor image'
-					/>
+					{src && (
+						<ImageModal
+							src={src}
+							srcset={srcset}
+							modalSrc={modalSrc}
+							className='w-96 bg-overlay'
+							altclassName='w-auto'
+							alt='sponsor image'
+						/>
+					)}
 					<section className='prose prose-invert flex grow flex-col lg:prose-xl'>
 						<h2>{title}</h2>
 						<p>{description}</p>
