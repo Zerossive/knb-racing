@@ -4,6 +4,13 @@ import ImageModal from '../../components/ImageModal'
 
 export const History = () => {
 	const history = [
+		// {
+		// 	date: 'month year',
+		// 	description: 'description of event',
+		// 	src: 'medium_image_url',
+		// 	srcset: 'small_image_url 400w, medium_image_url 1200w, large_image_url 3000w',
+		// 	modalSrc: 'large_image_url',
+		// },
 		{
 			date: '2020',
 			description: "Outlaw Race of 2020 sparks Kaylee's interest in racing",
@@ -11,17 +18,34 @@ export const History = () => {
 		{
 			date: '2021',
 			description: 'Kaylee enters her first racing season in a newly built tuner car',
+			src: 'https://i.postimg.cc/vHRK87Js/knb-2021-car-1200.webp',
+			srcset: 'https://i.postimg.cc/sfG8RHN2/knb-2021-car-400.webp 400w, https://i.postimg.cc/vHRK87Js/knb-2021-car-1200.webp 1200w, https://i.postimg.cc/KvXWc76x/knb-2021-car-1920.webp 3000w',
+			modalSrc: 'https://i.postimg.cc/KvXWc76x/knb-2021-car-1920.webp',
+		},
+		{
+			date: '2022',
+			description: 'Upgrade to a new class of tuner car',
+			src: 'https://i.postimg.cc/Gh0f3PWb/knb-2022-car-1200.webp',
+			srcset: 'https://i.postimg.cc/Y2LVwDsC/knb-2022-car-400.webp 400w, https://i.postimg.cc/Gh0f3PWb/knb-2022-car-1200.webp 1200w, https://i.postimg.cc/tC0cRdKR/knb-2022-car-1920.webp 3000w',
+			modalSrc: 'https://i.postimg.cc/tC0cRdKR/knb-2022-car-1920.webp',
 		},
 		{
 			date: '2024',
-			description: 'Switch to a new car',
+			description: 'Switch to a new body',
 			src: 'https://i.postimg.cc/Xq6c7FZX/knb-new-car-1200.jpg',
 			srcset: 'https://i.postimg.cc/B6KB0Nnd/knb-new-car-400.jpg 400w, https://i.postimg.cc/Xq6c7FZX/knb-new-car-1200.jpg 1200w, https://i.postimg.cc/FzbbfRcp/knb-new-car-full.jpg 3000w',
 			modalSrc: 'https://i.postimg.cc/FzbbfRcp/knb-new-car-full.jpg',
 		},
 		{
+			date: '2025',
+			description: 'Switch to a new gray chassis',
+			src: 'https://i.postimg.cc/cLBBSfWJ/knb-2025-car-1200.webp',
+			srcset: 'https://i.postimg.cc/8zmmSLGz/knb-2025-car-400.webp 400w, https://i.postimg.cc/cLBBSfWJ/knb-2025-car-1200.webp 1200w, https://i.postimg.cc/nLVYcMVx/knb-2025-car-full.webp 3000w',
+			modalSrc: 'https://i.postimg.cc/nLVYcMVx/knb-2025-car-full.webp',
+		},
+		{
 			date: '2026',
-			description: 'First race with a new car design',
+			description: 'First race with a new chassis and body',
 			src: 'https://i.postimg.cc/qqx8tz3t/2026-racecar-1200.webp',
 			srcset: 'https://i.postimg.cc/90YG4r7z/2026-racecar-400.webp 400w, https://i.postimg.cc/qqx8tz3t/2026-racecar-1200.webp 1200w, https://i.postimg.cc/kGvxVBb6/2026-racecar-1920.webp 3000w',
 			modalSrc: 'https://i.postimg.cc/kGvxVBb6/2026-racecar-1920.webp',
