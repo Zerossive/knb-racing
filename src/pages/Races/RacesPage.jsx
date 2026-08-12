@@ -8,7 +8,7 @@ import { FaTimesCircle } from 'react-icons/fa'
 const RacesPage = () => {
 	const races = [
 		{
-			title: '2025-08-07',
+			title: '2026-08-07',
 			url: 'https://www.youtube.com/watch?v=WeId-wmQqOw',
 			description: '',
 		},
